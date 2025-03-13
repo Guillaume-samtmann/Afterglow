@@ -6,6 +6,7 @@ TagManager:
   tags:
   - CinemachineTarget
   - DriveBoat
+  - peche
   layers:
   - Default
   - TransparentFX
