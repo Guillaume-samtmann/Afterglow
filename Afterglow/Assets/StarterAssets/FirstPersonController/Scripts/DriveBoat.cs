@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class DriveBoat : MonoBehaviour
 {
+    //ref
+    public CamRaycast camRaycast;
+    //variable
     public float speed = 5f;
     private bool canDriveBoat = false;
-    private bool isDriving = false;
+    public bool isDriving = false;
     public GameObject boat;
     public GameObject player;
     public Transform playerCamera; // 🎯 Ajouter la caméra du joueur
@@ -31,22 +34,30 @@ public class DriveBoat : MonoBehaviour
 
     void Update()
     {
-        if (canDriveBoat)
+        if (camRaycast.canFishing == true)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (canDriveBoat)
             {
-                StartDriving();
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    StartDriving();
+                }
+                if (Input.GetKeyDown(KeyCode.R))
+                {
+                    StopDriving();
+                }
             }
-            if (Input.GetKeyDown(KeyCode.R))
-            {
-                StopDriving();
-            }
-        }
 
-        if (isDriving)
-        {
-            MoveBoat(); // Déplacement du bateau avec orientation de la caméra
+            if (isDriving)
+            {
+                MoveBoat(); // Déplacement du bateau avec orientation de la caméra
+            }
         }
+        else
+        {
+            //Debug.Log("tu n'as pas de cane a peche");
+        }
+        
     }
 
     private void StartDriving()
