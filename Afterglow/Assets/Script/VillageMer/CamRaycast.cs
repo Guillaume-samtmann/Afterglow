@@ -9,6 +9,7 @@ public class CamRaycast : MonoBehaviour
 
     //condition
     public bool takeCane = false;
+    public bool canFishing = false;
 
     //ref obj
     public GameObject caneAPeche;
@@ -59,6 +60,7 @@ public class CamRaycast : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.E) && takeCane)
         {
             caneAPeche.SetActive(false);
+            canFishing = true;
         }
     }
 }
