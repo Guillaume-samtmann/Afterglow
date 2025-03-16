@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 
 public class Fishing : MonoBehaviour
@@ -11,6 +12,7 @@ public class Fishing : MonoBehaviour
     public GameObject zone1;
     public GameObject zone2;
     public GameObject zone3;
+    public GameObject persoCanePeche;
 
     public bool zone1Fishing = false;
     public bool zone2Fishing = false;
@@ -19,6 +21,10 @@ public class Fishing : MonoBehaviour
     public bool zone1IsComplect = false;
     public bool zone2IsComplect = false;
     public bool zone3IsComplect = false;
+
+    public bool canAnnim = false;
+
+    int nbrPoisson = 0;
     // Update is called once per frame
     void Update()
     {
@@ -33,13 +39,14 @@ public class Fishing : MonoBehaviour
             {
                 Debug.Log("Tu es dans la zone de peche 1");
                 zone1Fishing = true;
+                canAnnim = true;
             }
-            else if (zone2.name == "Zone2")
+            else if (other.name == "Zone2")
             {
                 Debug.Log("Tu es dans la zone de peche 2");
                 zone2Fishing = true;
             }
-            else if(zone3.name == "Zone3")
+            else if(other.name == "Zone3")
             {
                 Debug.Log("Tu es dans la zone de peche 3");
                 zone3Fishing = true;
@@ -61,39 +68,59 @@ public class Fishing : MonoBehaviour
     {
         if (camRaycast.canFishing && driveBoat.isDriving)
         {
-            zone1.SetActive(true);
-        }
-        if (Input.GetKeyDown(KeyCode.F) && zone1Fishing)
-        {
-            Debug.Log("Tu as pecher 2 poisson");
-            zone1IsComplect = true;
-
             if (zone1IsComplect)
             {
                 zone1.SetActive(false);
-                zone2.SetActive(true);
+            }
+            else
+            {
+                zone1.SetActive(true);
             }
         }
-        if (Input.GetKeyDown(KeyCode.F) && zone2Fishing)
+        if (Input.GetKeyDown(KeyCode.F) && zone1Fishing)
         {
-            Debug.Log("Tu as pecher 4 poisson");
+            persoCanePeche.SetActive(true);
+            nbrPoisson =  Random.Range(1, 4);
+            Debug.Log("nbr poisson zone1 " + nbrPoisson);
+            zone1IsComplect = true;
+            if (zone1IsComplect)
+            {
+                zone1.SetActive(false);
+                //StartCoroutine(disableCanePeche());
+                zone1Fishing = false;
+                zone2.SetActive(true);
+            }
+        }else if (Input.GetKeyDown(KeyCode.F) && zone2Fishing)
+        {
+            persoCanePeche.SetActive(true);
+            nbrPoisson = nbrPoisson + Random.Range(2, 4);
+            Debug.Log("nbr poisson zone2 " + nbrPoisson);
             zone2IsComplect = true;
-
             if (zone2IsComplect)
             {
                 zone2.SetActive(false);
+                StartCoroutine(disableCanePeche());
+                zone2Fishing = false;
                 zone3.SetActive(true);
             }
-        }
-        if (Input.GetKeyDown(KeyCode.F) && zone3Fishing)
+        }else if (Input.GetKeyDown(KeyCode.F) && zone3Fishing)
         {
-            Debug.Log("Tu as pecher 1 poisson");
+            persoCanePeche.SetActive(true);
+            nbrPoisson = nbrPoisson + Random.Range(1, 3);
+            Debug.Log("nbr poisson zone3 " + nbrPoisson);
             zone3IsComplect = true;
-
             if (zone3IsComplect)
             {
                 zone3.SetActive(false);
+                StartCoroutine(disableCanePeche());
+                zone3Fishing = false;
             }
         }
+    }
+
+    IEnumerator disableCanePeche()
+    {
+        yield return new WaitForSeconds(2);
+        persoCanePeche.SetActive(false);
     }
 }
