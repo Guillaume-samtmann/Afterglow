@@ -45,11 +45,13 @@ public class Fishing : MonoBehaviour
             {
                 Debug.Log("Tu es dans la zone de peche 2");
                 zone2Fishing = true;
+                canAnnim = true;
             }
             else if(other.name == "Zone3")
             {
                 Debug.Log("Tu es dans la zone de peche 3");
                 zone3Fishing = true;
+                canAnnim = true;
             }
         }
     }
@@ -61,6 +63,7 @@ public class Fishing : MonoBehaviour
             zone1Fishing = false;
             zone2Fishing =false;
             zone3Fishing =false;
+            canAnnim = false;
         }
     }
 
@@ -86,7 +89,7 @@ public class Fishing : MonoBehaviour
             if (zone1IsComplect)
             {
                 zone1.SetActive(false);
-                //StartCoroutine(disableCanePeche());
+                StartCoroutine(disableCanePeche());
                 zone1Fishing = false;
                 zone2.SetActive(true);
             }
@@ -120,7 +123,7 @@ public class Fishing : MonoBehaviour
 
     IEnumerator disableCanePeche()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(3);
         persoCanePeche.SetActive(false);
     }
 }
