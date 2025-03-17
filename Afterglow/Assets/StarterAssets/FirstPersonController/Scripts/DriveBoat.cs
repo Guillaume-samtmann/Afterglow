@@ -12,6 +12,7 @@ public class DriveBoat : MonoBehaviour
     public bool isDriving = false;
     public GameObject boat;
     public GameObject player;
+    public GameObject playerParent;
     public Transform playerCamera; // 🎯 Ajouter la caméra du joueur
     private CharacterController playerController;
     private Rigidbody playerRigidbody;
@@ -65,7 +66,8 @@ public class DriveBoat : MonoBehaviour
         isDriving = true;
 
         // Rendre le joueur enfant du bateau
-        player.transform.SetParent(boat.transform);
+        player.transform.SetParent(boat.transform, true);
+        //player.transform.localScale = Vector3.one;
 
         // Désactiver les déplacements du joueur
         if (playerRigidbody != null)
@@ -86,7 +88,9 @@ public class DriveBoat : MonoBehaviour
         isDriving = false;
 
         // Retirer le joueur du bateau
-        player.transform.SetParent(null);
+        player.transform.SetParent(null, true);
+        player.transform.SetParent(playerParent.transform, true);
+        player.transform.localScale = Vector3.one;
 
         // Réactiver les déplacements du joueur
         if (playerRigidbody != null)
