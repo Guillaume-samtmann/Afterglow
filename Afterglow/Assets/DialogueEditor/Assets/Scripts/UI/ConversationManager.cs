@@ -157,6 +157,8 @@ namespace DialogueEditor
         public void EndConversation()
         {
             SetState(eState.TransitioningDialogueOff);
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
 
             if (OnConversationEnded != null)
                 OnConversationEnded.Invoke();

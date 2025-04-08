@@ -12,6 +12,8 @@ public class ConversationStart : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             if(Input.GetKeyDown(KeyCode.E)) {
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.Confined;
                 ConversationManager.Instance.StartConversation(myConversation);
             }
         }
