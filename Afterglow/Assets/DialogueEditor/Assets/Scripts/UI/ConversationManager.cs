@@ -152,6 +152,8 @@ namespace DialogueEditor
             TurnOnUI();
             m_currentSpeech = m_conversation.Root;
             SetState(eState.TransitioningDialogueBoxOn);
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.Confined;
         }
 
         public void EndConversation()
