@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Fishing : MonoBehaviour
 {
@@ -25,6 +26,8 @@ public class Fishing : MonoBehaviour
     public bool canAnnim = false;
 
     int nbrPoisson = 0;
+
+    public Text nbrPoissonAff;
     // Update is called once per frame
     void Update()
     {
@@ -84,7 +87,7 @@ public class Fishing : MonoBehaviour
         {
             persoCanePeche.SetActive(true);
             nbrPoisson =  Random.Range(1, 4);
-            Debug.Log("nbr poisson zone1 " + nbrPoisson);
+            nbrPoissonAff.text = nbrPoisson.ToString();
             zone1IsComplect = true;
             if (zone1IsComplect)
             {
@@ -97,7 +100,7 @@ public class Fishing : MonoBehaviour
         {
             persoCanePeche.SetActive(true);
             nbrPoisson = nbrPoisson + Random.Range(2, 4);
-            Debug.Log("nbr poisson zone2 " + nbrPoisson);
+            nbrPoissonAff.text = nbrPoisson.ToString();
             zone2IsComplect = true;
             if (zone2IsComplect)
             {
@@ -110,7 +113,7 @@ public class Fishing : MonoBehaviour
         {
             persoCanePeche.SetActive(true);
             nbrPoisson = nbrPoisson + Random.Range(1, 3);
-            Debug.Log("nbr poisson zone3 " + nbrPoisson);
+            nbrPoissonAff.text = nbrPoisson.ToString();
             zone3IsComplect = true;
             if (zone3IsComplect)
             {
