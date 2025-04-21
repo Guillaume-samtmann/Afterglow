@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DialogueEditor;
 
 public class CamRaycast : MonoBehaviour
 {
     private GameObject previousHittedObject;
     private GameObject hittedObject;
+    public GameObject btnE;
 
     //condition
     public bool takeCane = false;
@@ -35,7 +37,7 @@ public class CamRaycast : MonoBehaviour
             if (hittedObject.CompareTag("peche"))
             {
                 HighlightObject(hittedObject, true);
-                Debug.Log("E");
+                btnE.SetActive(true);
                 takeCane = true;
             }
         }
@@ -43,6 +45,7 @@ public class CamRaycast : MonoBehaviour
         {
             hittedObject = null;
             takeCane=false;
+            btnE.SetActive(false);
         }
 
         if(previousHittedObject != hittedObject)
@@ -57,10 +60,12 @@ public class CamRaycast : MonoBehaviour
 
     private void Update()
     {
+
         if(Input.GetKeyDown(KeyCode.E) && takeCane)
         {
             caneAPeche.SetActive(false);
             canFishing = true;
+            btnE.SetActive(false);
         }
     }
 }
