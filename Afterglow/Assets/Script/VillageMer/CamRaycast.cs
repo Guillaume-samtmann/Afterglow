@@ -13,8 +13,12 @@ public class CamRaycast : MonoBehaviour
     public bool takeCane = false;
     public bool canFishing = false;
 
+    public bool takeAxe = false;
+
     //ref obj
     public GameObject caneAPeche;
+    public GameObject triggeurDialog1;
+
 
     private void HighlightObject(GameObject obj, bool highlight)
     {
@@ -39,6 +43,11 @@ public class CamRaycast : MonoBehaviour
                 HighlightObject(hittedObject, true);
                 btnE.SetActive(true);
                 takeCane = true;
+            }
+
+            if (hittedObject.CompareTag("Rock"))
+            {
+                Debug.Log("casser cailloux");
             }
         }
         else
@@ -66,6 +75,7 @@ public class CamRaycast : MonoBehaviour
             caneAPeche.SetActive(false);
             canFishing = true;
             btnE.SetActive(false);
+            triggeurDialog1.SetActive(false);
         }
     }
 }

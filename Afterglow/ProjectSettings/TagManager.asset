@@ -8,6 +8,7 @@ TagManager:
   - DriveBoat
   - peche
   - ZoneFishing
+  - hache
   layers:
   - Default
   - TransparentFX

@@ -43,6 +43,14 @@ public class DriveBoat : MonoBehaviour
         }
     }
 
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("DriveBoat"))
+        {
+            canDriveBoat = false;
+        }
+    }
+
     void Update()
     {
         if (camRaycast.canFishing == true)
