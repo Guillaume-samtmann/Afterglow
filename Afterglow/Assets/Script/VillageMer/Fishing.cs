@@ -14,6 +14,7 @@ public class Fishing : MonoBehaviour
     public GameObject zone2;
     public GameObject zone3;
     public GameObject persoCanePeche;
+    public GameObject zoneDialog2;
 
     public bool zone1Fishing = false;
     public bool zone2Fishing = false;
@@ -25,13 +26,18 @@ public class Fishing : MonoBehaviour
 
     public bool canAnnim = false;
 
-    int nbrPoisson = 0;
+    public int nbrPoisson = 0;
 
     public Text nbrPoissonAff;
     // Update is called once per frame
     void Update()
     {
         ZoneFishing();
+
+        if(nbrPoisson >= 3)
+        {
+            zoneDialog2.SetActive(true);
+        }
     }
 
     private void OnTriggerEnter(Collider other)

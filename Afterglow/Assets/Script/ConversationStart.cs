@@ -10,6 +10,8 @@ public class ConversationStart : MonoBehaviour
     bool conversationStart = false;
     public GameObject canneApeche;
 
+    Fishing fishing;
+
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -19,18 +21,6 @@ public class ConversationStart : MonoBehaviour
                 ConversationManager.Instance.StartConversation(myConversation);
                 btnE.SetActive(false);
                 conversationStart = true;
-
-                if(conversationStart)
-                {
-                     int giveCanne = ConversationManager.Instance.GetInt("teste");
-                    Debug.Log(giveCanne);
-                    if (giveCanne == 1)
-                    {
-                        Debug.Log("voici le chiffre 1");
-                        canneApeche.SetActive(true);
-                    }
-                }
-
             }
         }
     }
