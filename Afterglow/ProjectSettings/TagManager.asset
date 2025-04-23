@@ -9,6 +9,7 @@ TagManager:
   - peche
   - ZoneFishing
   - hache
+  - Rock
   layers:
   - Default
   - TransparentFX
