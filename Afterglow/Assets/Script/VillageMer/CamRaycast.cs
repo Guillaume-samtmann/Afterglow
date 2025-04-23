@@ -19,6 +19,35 @@ public class CamRaycast : MonoBehaviour
     public GameObject caneAPeche;
     public GameObject triggeurDialog1;
 
+    public int ptnAtt = 5;
+
+    [Header("Rock")]
+    public GameObject rock01;
+    public GameObject rock02;
+    public GameObject rock03;
+    public GameObject rock04;
+    public GameObject rock05;
+    public GameObject rock06;
+    public GameObject rock07;
+
+    [Header("BoolRock")]
+    public bool canBrokeRock01 = false;
+    public bool canBrokeRock02 = false;
+    public bool canBrokeRock03 = false;
+    public bool canBrokeRock04 = false;
+    public bool canBrokeRock05 = false;
+    public bool canBrokeRock06 = false;
+    public bool canBrokeRock07 = false;
+
+    [Header("pvRock")]
+    public int rockPv01 = 10;
+    public int rockPv02 = 15;
+    public int rockPv03 = 10;
+    public int rockPv04 = 15;
+    public int rockPv05 = 15;
+    public int rockPv06 = 10;
+    public int rockPv07 = 15;
+
 
     private void HighlightObject(GameObject obj, bool highlight)
     {
@@ -47,7 +76,42 @@ public class CamRaycast : MonoBehaviour
 
             if (hittedObject.CompareTag("Rock"))
             {
-                Debug.Log("casser cailloux");
+                
+                if(hittedObject.name == "Rock01")
+                {
+                    HighlightObject(hittedObject, true);
+                    canBrokeRock01 = true;
+                }
+                else if (hittedObject.name == "Rock02")
+                {
+                    HighlightObject(hittedObject, true);
+                    canBrokeRock02 = true;
+                }
+                else if (hittedObject.name == "Rock03")
+                {
+                    HighlightObject (hittedObject, true);
+                    canBrokeRock03 = true;
+                }
+                else if (hittedObject.name == "Rock04")
+                {
+                    HighlightObject(hittedObject, true);
+                    canBrokeRock04 = true;
+                }
+                else if (hittedObject.name == "Rock05")
+                {
+                    HighlightObject(hittedObject, true);
+                    canBrokeRock05 = true;
+                }
+                else if (hittedObject.name == "Rock06")
+                {
+                    HighlightObject(hittedObject, true);
+                    canBrokeRock06 = true;
+                }
+                else if (hittedObject.name == "Rock07")
+                {
+                    HighlightObject(hittedObject, true);
+                    canBrokeRock07 = true;
+                }
             }
         }
         else
@@ -55,7 +119,14 @@ public class CamRaycast : MonoBehaviour
             hittedObject = null;
             takeCane=false;
             btnE.SetActive(false);
-        }
+            canBrokeRock01 = false;
+            canBrokeRock02 = false;
+            canBrokeRock03 = false;
+            canBrokeRock04 = false;
+            canBrokeRock05 = false;
+            canBrokeRock06 = false;
+            canBrokeRock07 = false;
+}
 
         if(previousHittedObject != hittedObject)
         {
@@ -70,12 +141,68 @@ public class CamRaycast : MonoBehaviour
     private void Update()
     {
 
-        if(Input.GetKeyDown(KeyCode.E) && takeCane)
+        if (Input.GetKeyDown(KeyCode.E) && takeCane)
         {
             caneAPeche.SetActive(false);
             canFishing = true;
             btnE.SetActive(false);
             triggeurDialog1.SetActive(false);
+        }
+        if (Input.GetMouseButtonDown(0) && canBrokeRock01)
+        {
+            rockPv01 = rockPv01 - ptnAtt;
+            if (rockPv01 <= 0)
+            {
+                rock01.SetActive(false);
+            }
+        }
+        if (Input.GetMouseButtonDown(0) && canBrokeRock02)
+        {
+            rockPv02 = rockPv02 - ptnAtt;
+            if (rockPv02 <= 0)
+            {
+                rock02.SetActive(false);
+            }
+        }
+        if (Input.GetMouseButtonDown(0) && canBrokeRock03)
+        {
+            rockPv03 = rockPv03 - ptnAtt;
+            if (rockPv03 <= 0)
+            {
+                rock03.SetActive(false);
+            }
+        }
+        if (Input.GetMouseButtonDown(0) && canBrokeRock04)
+        {
+            rockPv04 = rockPv04 - ptnAtt;
+            if (rockPv04 <= 0)
+            {
+                rock04.SetActive(false);
+            }
+        }
+        if (Input.GetMouseButtonDown(0) && canBrokeRock05)
+        {
+            rockPv05 = rockPv05 - ptnAtt;
+            if (rockPv05 <= 0)
+            {
+                rock05.SetActive(false);
+            }
+        }
+        if (Input.GetMouseButtonDown(0) && canBrokeRock06)
+        {
+            rockPv06 = rockPv06 - ptnAtt;
+            if (rockPv06 <= 0)
+            {
+                rock06.SetActive(false);
+            }
+        }
+        if (Input.GetMouseButtonDown(0) && canBrokeRock07)
+        {
+            rockPv07 = rockPv07 - ptnAtt;
+            if (rockPv07 <= 0)
+            {
+                rock07.SetActive(false);
+            }
         }
     }
 }
