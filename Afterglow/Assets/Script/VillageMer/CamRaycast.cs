@@ -19,6 +19,8 @@ public class CamRaycast : MonoBehaviour
     public GameObject caneAPeche;
     public GameObject triggeurDialog1;
 
+    public PickUpAxe scriptAxe;
+
     public int ptnAtt = 5;
 
     [Header("Rock")]
@@ -82,32 +84,32 @@ public class CamRaycast : MonoBehaviour
                     HighlightObject(hittedObject, true);
                     canBrokeRock01 = true;
                 }
-                else if (hittedObject.name == "Rock02")
+                else if (hittedObject.name == "Rock02" && scriptAxe.AxeIsTake)
                 {
                     HighlightObject(hittedObject, true);
                     canBrokeRock02 = true;
                 }
-                else if (hittedObject.name == "Rock03")
+                else if (hittedObject.name == "Rock03" && scriptAxe.AxeIsTake)
                 {
                     HighlightObject (hittedObject, true);
                     canBrokeRock03 = true;
                 }
-                else if (hittedObject.name == "Rock04")
+                else if (hittedObject.name == "Rock04" && scriptAxe.AxeIsTake)
                 {
                     HighlightObject(hittedObject, true);
                     canBrokeRock04 = true;
                 }
-                else if (hittedObject.name == "Rock05")
+                else if (hittedObject.name == "Rock05" && scriptAxe.AxeIsTake)
                 {
                     HighlightObject(hittedObject, true);
                     canBrokeRock05 = true;
                 }
-                else if (hittedObject.name == "Rock06")
+                else if (hittedObject.name == "Rock06" && scriptAxe.AxeIsTake)
                 {
                     HighlightObject(hittedObject, true);
                     canBrokeRock06 = true;
                 }
-                else if (hittedObject.name == "Rock07")
+                else if (hittedObject.name == "Rock07" && scriptAxe.AxeIsTake)
                 {
                     HighlightObject(hittedObject, true);
                     canBrokeRock07 = true;
