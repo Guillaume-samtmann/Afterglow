@@ -15166,6 +15166,27 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3684078277732715234, guid: 0f301fdabe0c9a04ea403ff74b112f39, type: 3}
   m_PrefabInstance: {fileID: 1868318334}
   m_PrefabAsset: {fileID: 0}
+--- !u!135 &369697257
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 369697255}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 12
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &374171855
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21776,6 +21797,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d36c97875794d864ab94dd3e9305604c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &541923568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541923562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d93e3f3a243079644a2e3cd5cc0a9b20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &541923570
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541923562}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!4 &542444174 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5334636338466079997, guid: b223c348bb0bbbd47a45d49d11f25274, type: 3}
@@ -26901,6 +26961,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1264433200921298619, guid: b91f2cacb0bef7f4bac8f61b0f00b4c6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 541923567}
+    - targetCorrespondingSourceObject: {fileID: 1264433200921298619, guid: b91f2cacb0bef7f4bac8f61b0f00b4c6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 541923568}
+    - targetCorrespondingSourceObject: {fileID: 1264433200921298619, guid: b91f2cacb0bef7f4bac8f61b0f00b4c6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 541923570}
   m_SourcePrefab: {fileID: 100100000, guid: b91f2cacb0bef7f4bac8f61b0f00b4c6, type: 3}
 --- !u!4 &657650462 stripped
 Transform:
@@ -75249,15 +75315,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1666804425080572170, guid: 0f301fdabe0c9a04ea403ff74b112f39, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 29.5
+      value: -5.55
       objectReference: {fileID: 0}
     - target: {fileID: 1666804425080572170, guid: 0f301fdabe0c9a04ea403ff74b112f39, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.1
+      value: 32.83
       objectReference: {fileID: 0}
     - target: {fileID: 1666804425080572170, guid: 0f301fdabe0c9a04ea403ff74b112f39, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 21.2
+      value: 56.96
       objectReference: {fileID: 0}
     - target: {fileID: 1666804425080572170, guid: 0f301fdabe0c9a04ea403ff74b112f39, type: 3}
       propertyPath: m_LocalRotation.w
@@ -75313,6 +75379,9 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 86242657}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3684078277732715234, guid: 0f301fdabe0c9a04ea403ff74b112f39, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 369697257}
     - targetCorrespondingSourceObject: {fileID: 2579907945313855115, guid: 0f301fdabe0c9a04ea403ff74b112f39, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1868318336}
