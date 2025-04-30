@@ -8,11 +8,12 @@ public class Arrow : MonoBehaviour
     private Rigidbody rb;
     private int arrowDamage = 25;
     private bool isStuck = false;
+    public string toucher;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        Destroy(gameObject, 50f);
+        Destroy(gameObject, 3f);
 
         Collider arrowCollider = GetComponent<Collider>();
 
@@ -38,13 +39,10 @@ public class Arrow : MonoBehaviour
 
             rb.isKinematic = true;
 
-            Debug.Log("Arrow stuck :" + collision.transform.name);
-        }
+            toucher = collision.transform.name;
+            GetComponent<Collider>().enabled = false;
 
-        /*if (collision.transform.GetComponent<Animal>())
-        {
-            Animal animal = collision.transform.GetComponent<Animal>();
-            animal.TakeDamage(arrowDamage);
-        }*/
+            Debug.Log(toucher);
+        }
     }
 }
