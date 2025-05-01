@@ -8,32 +8,51 @@ public class Mob : MonoBehaviour
     Animator anim;
     private NavMeshAgent agent;
     public bool joueurVu = false;
+    public bool attackPlayer = false;
     public int enemyPtnVie = 15;
 
     public Arrow arrow;
+    public MobMove mobMove;
 
     private void Start()
     {
         anim = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
     }
-    private void OnTriggerEnter(Collider other)
+    /*private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            agent.isStopped = true;
-            anim.SetBool("isWalking", false);
-            anim.SetBool("attack", true);
-            joueurVu = true;
+            if (other.gameObject.name == "DetectPlayer")
+            {
+                //agent.isStopped = true;
+                //anim.SetBool("isWalking", false);
+                //anim.SetBool("attack", true);
+                //mobMove.setNewDestination("PlayerCapsule");
+                mobMove.fin = true;
+                joueurVu = true;
+                Debug.Log("Detecter");
+            }
+            if (other.gameObject.name == "AttackPlayer")
+            {
+                Debug.Log("Tabassage");
+            }
+            
         }
-    }
+     }*/
 
     private void Update()
     {
         if (joueurVu)
         {
+            mobMove.setNewDestination("PlayerCapsule");
             transform.LookAt(GameObject.Find("PlayerCapsule").transform.position);
             Dead();
+        }
+        if (attackPlayer)
+        {
+            anim.SetBool("attack", true);
+            anim.SetBool("isWalking", false);
         }
     }
 
