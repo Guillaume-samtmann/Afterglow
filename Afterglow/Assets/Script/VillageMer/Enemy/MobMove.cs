@@ -9,7 +9,7 @@ public class MobMove : MonoBehaviour
     private NavMeshAgent agent;
     public static string nomObj;
     Animator anim;
-    private bool fin = false;
+    public bool fin = false;
 
     private void Awake()
     {
@@ -33,7 +33,6 @@ public class MobMove : MonoBehaviour
         float dist = agent.remainingDistance;
         if (agent.pathStatus==NavMeshPathStatus.PathComplete && agent.remainingDistance <= 0.5f) 
         {
-            print("FINI");
             anim.SetBool("isWalking", false);
             if( fin == false )
             {
@@ -43,7 +42,7 @@ public class MobMove : MonoBehaviour
         }
     }
 
-    void setNewDestination(string d)
+    public void setNewDestination(string d)
     {
         nomObj = d;
         GameObject centre = GameObject.Find(nomObj);

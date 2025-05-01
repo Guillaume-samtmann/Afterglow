@@ -11,6 +11,8 @@ TagManager:
   - hache
   - Rock
   - Arrow
+  - DetectPlayer
+  - AttackPlayer
   layers:
   - Default
   - TransparentFX
