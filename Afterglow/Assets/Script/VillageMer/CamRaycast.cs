@@ -50,6 +50,15 @@ public class CamRaycast : MonoBehaviour
     public int rockPv06 = 10;
     public int rockPv07 = 15;
 
+    [Header("indice")]
+    public GameObject indice1;
+    public bool canPickupIndice1 = false;
+    public bool isPickUpIndice1 = false;
+
+    public GameObject perle1;
+    public bool canPickupupPerle = false;
+    public bool isPickupPerle = false;
+
 
     private void HighlightObject(GameObject obj, bool highlight)
     {
@@ -115,6 +124,21 @@ public class CamRaycast : MonoBehaviour
                     canBrokeRock07 = true;
                 }
             }
+            if (hittedObject.CompareTag("indice"))
+            {
+                if(hittedObject.name == "LettreVeillieHomme")
+                {
+                    HighlightObject(hittedObject, true);
+                    btnE.SetActive(true);
+                    canPickupIndice1 = true;
+                }
+                else if(hittedObject.name == "Perle")
+                {
+                    HighlightObject(hittedObject, true);
+                    btnE.SetActive(true);
+                    canPickupupPerle = true;
+                }
+            }
         }
         else
         {
@@ -128,6 +152,7 @@ public class CamRaycast : MonoBehaviour
             canBrokeRock05 = false;
             canBrokeRock06 = false;
             canBrokeRock07 = false;
+            canPickupIndice1 = false;
 }
 
         if(previousHittedObject != hittedObject)
@@ -205,6 +230,18 @@ public class CamRaycast : MonoBehaviour
             {
                 rock07.SetActive(false);
             }
+        }
+        if(Input.GetKeyUp(KeyCode.E) && canPickupIndice1)
+        {
+            indice1.SetActive(false);
+            isPickUpIndice1 = true;
+            btnE.SetActive(false);
+        }
+        if(Input.GetKeyUp(KeyCode.E) && canPickupupPerle)
+        {
+            perle1.SetActive(false);
+            isPickupPerle = true;
+            btnE.SetActive(false);
         }
     }
 }

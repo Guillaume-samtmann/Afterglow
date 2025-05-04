@@ -13,6 +13,7 @@ TagManager:
   - Arrow
   - DetectPlayer
   - AttackPlayer
+  - indice
   layers:
   - Default
   - TransparentFX

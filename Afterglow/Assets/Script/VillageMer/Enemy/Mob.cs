@@ -19,27 +19,7 @@ public class Mob : MonoBehaviour
         anim = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
     }
-    /*private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            if (other.gameObject.name == "DetectPlayer")
-            {
-                //agent.isStopped = true;
-                //anim.SetBool("isWalking", false);
-                //anim.SetBool("attack", true);
-                //mobMove.setNewDestination("PlayerCapsule");
-                mobMove.fin = true;
-                joueurVu = true;
-                Debug.Log("Detecter");
-            }
-            if (other.gameObject.name == "AttackPlayer")
-            {
-                Debug.Log("Tabassage");
-            }
-            
-        }
-     }*/
+ 
 
     private void Update()
     {
@@ -53,6 +33,10 @@ public class Mob : MonoBehaviour
         {
             anim.SetBool("attack", true);
             anim.SetBool("isWalking", false);
+        }else if (attackPlayer == false)
+        {
+            anim.SetBool("attack", false);
+            anim.SetBool("isWalking", true);
         }
     }
 
@@ -74,6 +58,8 @@ public class Mob : MonoBehaviour
             anim.SetBool("attack", false);
             anim.SetBool("isDead", true);
             Destroy(gameObject, 5f);
+            joueurVu = false;
+            agent.isStopped = true;
         }
     }
 
@@ -81,6 +67,13 @@ public class Mob : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         anim.SetBool("isHurt", false);
-        anim.SetBool("attack", true);
+        if (attackPlayer)
+        {
+            anim.SetBool("attack", true);
+        }
+        else
+        {
+            joueurVu = true;
+        }
     }
 }
