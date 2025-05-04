@@ -13,7 +13,14 @@ public class AttackTrigger : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             mob.attackPlayer = true; 
-            Debug.Log("Tabassage");
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            mob.attackPlayer = false;
         }
     }
 
