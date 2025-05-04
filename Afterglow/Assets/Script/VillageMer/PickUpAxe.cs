@@ -8,10 +8,13 @@ public class PickUpAxe : MonoBehaviour
     public GameObject Axe;
     public GameObject btnE;
     public bool AxeIsTake = false;
-    private void OnTriggerEnter(Collider other)
+
+    public Outline outline;
+    private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            outline.enabled = true;
             btnE.SetActive(true);
             canTakeAxe = true;
         }

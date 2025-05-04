@@ -14,6 +14,7 @@ public class Fishing : MonoBehaviour
     public GameObject zone2;
     public GameObject zone3;
     public GameObject persoCanePeche;
+    public GameObject zoneDialog1;
     public GameObject zoneDialog2;
 
     public bool zone1Fishing = false;
@@ -37,6 +38,7 @@ public class Fishing : MonoBehaviour
         if(nbrPoisson >= 3)
         {
             zoneDialog2.SetActive(true);
+            zoneDialog1.SetActive(false);
         }
     }
 
