@@ -59,6 +59,11 @@ public class CamRaycast : MonoBehaviour
     public bool canPickupupPerle = false;
     public bool isPickupPerle = false;
 
+    [Header("Wanted")]
+    public GameObject wanted0;
+    public bool canPickupWanted0 = false;
+    public bool isPickupWanted0 = false;
+
 
     private void HighlightObject(GameObject obj, bool highlight)
     {
@@ -139,6 +144,15 @@ public class CamRaycast : MonoBehaviour
                     canPickupupPerle = true;
                 }
             }
+            if (hittedObject.CompareTag("Wanted"))
+            {
+                if(hittedObject.name == "wanted0")
+                {
+                    HighlightObject(hittedObject, true);
+                    btnE.SetActive(true);
+                    canPickupWanted0 = true;
+                }
+            }
         }
         else
         {
@@ -153,7 +167,9 @@ public class CamRaycast : MonoBehaviour
             canBrokeRock06 = false;
             canBrokeRock07 = false;
             canPickupIndice1 = false;
-}
+            canPickupupPerle = false;
+            canPickupWanted0 = false;
+        }
 
         if(previousHittedObject != hittedObject)
         {
@@ -241,6 +257,12 @@ public class CamRaycast : MonoBehaviour
         {
             perle1.SetActive(false);
             isPickupPerle = true;
+            btnE.SetActive(false);
+        }
+        if(Input.GetKeyUp(KeyCode.E) && canPickupWanted0)
+        {
+            wanted0.SetActive(false);
+            isPickupWanted0 = true;
             btnE.SetActive(false);
         }
     }

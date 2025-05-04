@@ -10,6 +10,7 @@ public class Mob : MonoBehaviour
     public bool joueurVu = false;
     public bool attackPlayer = false;
     public int enemyPtnVie = 15;
+    public bool isDead = false;
 
     public Arrow arrow;
     public MobMove mobMove;
@@ -60,6 +61,7 @@ public class Mob : MonoBehaviour
             Destroy(gameObject, 5f);
             joueurVu = false;
             agent.isStopped = true;
+            isDead = true;
         }
     }
 
