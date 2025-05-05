@@ -8,11 +8,18 @@ TagManager:
   - DriveBoat
   - peche
   - ZoneFishing
+  - hache
+  - Rock
+  - Arrow
+  - DetectPlayer
+  - AttackPlayer
+  - indice
+  - Wanted
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Enemy
   - Water
   - UI
   - 
