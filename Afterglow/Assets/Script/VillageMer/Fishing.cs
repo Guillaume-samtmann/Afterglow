@@ -26,8 +26,8 @@ public class Fishing : MonoBehaviour
     public bool zone3IsComplect = false;
 
     public bool canAnnim = false;
-
     public int nbrPoisson = 0;
+    public GameObject btnPecher;
 
     public Text nbrPoissonAff;
     // Update is called once per frame
@@ -48,21 +48,21 @@ public class Fishing : MonoBehaviour
         {
             if(other.name == "Zone1")
             {
-                Debug.Log("Tu es dans la zone de peche 1");
                 zone1Fishing = true;
                 canAnnim = true;
+                btnPecher.SetActive(true);
             }
             else if (other.name == "Zone2")
             {
-                Debug.Log("Tu es dans la zone de peche 2");
                 zone2Fishing = true;
                 canAnnim = true;
+                btnPecher.SetActive(true);
             }
             else if(other.name == "Zone3")
             {
-                Debug.Log("Tu es dans la zone de peche 3");
                 zone3Fishing = true;
                 canAnnim = true;
+                btnPecher.SetActive(true);
             }
         }
     }
@@ -75,6 +75,7 @@ public class Fishing : MonoBehaviour
             zone2Fishing =false;
             zone3Fishing =false;
             canAnnim = false;
+            btnPecher.SetActive(false);
         }
     }
 
@@ -94,6 +95,7 @@ public class Fishing : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F) && zone1Fishing)
         {
             persoCanePeche.SetActive(true);
+            btnPecher.SetActive(false);
             nbrPoisson =  Random.Range(1, 4);
             nbrPoissonAff.text = nbrPoisson.ToString();
             zone1IsComplect = true;

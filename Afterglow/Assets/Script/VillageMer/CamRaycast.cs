@@ -7,6 +7,9 @@ public class CamRaycast : MonoBehaviour
 {
     private GameObject previousHittedObject;
     private GameObject hittedObject;
+    [Header("Button_E")]
+    public GameObject btnE_wanted;
+    public GameObject btnE_cane;
     public GameObject btnE;
 
     //condition
@@ -86,7 +89,7 @@ public class CamRaycast : MonoBehaviour
             if (hittedObject.CompareTag("peche"))
             {
                 HighlightObject(hittedObject, true);
-                btnE.SetActive(true);
+                btnE_cane.SetActive(true);
                 takeCane = true;
             }
 
@@ -149,7 +152,7 @@ public class CamRaycast : MonoBehaviour
                 if(hittedObject.name == "wanted0")
                 {
                     HighlightObject(hittedObject, true);
-                    btnE.SetActive(true);
+                    btnE_wanted.SetActive(true);
                     canPickupWanted0 = true;
                 }
             }
@@ -159,6 +162,8 @@ public class CamRaycast : MonoBehaviour
             hittedObject = null;
             takeCane=false;
             btnE.SetActive(false);
+            btnE_cane.SetActive(false);
+            btnE_wanted.SetActive(false);
             canBrokeRock01 = false;
             canBrokeRock02 = false;
             canBrokeRock03 = false;
@@ -188,7 +193,7 @@ public class CamRaycast : MonoBehaviour
         {
             caneAPeche.SetActive(false);
             canFishing = true;
-            btnE.SetActive(false);
+            btnE_cane.SetActive(false);
             triggeurDialog1.SetActive(false);
         }
         if (Input.GetMouseButtonDown(0) && canBrokeRock01)
@@ -263,7 +268,7 @@ public class CamRaycast : MonoBehaviour
         {
             wanted0.SetActive(false);
             isPickupWanted0 = true;
-            btnE.SetActive(false);
+            btnE_wanted.SetActive(false);
         }
     }
 }

@@ -81,6 +81,7 @@ public class SceneManagerIndice : MonoBehaviour
         if (camRaycast.canFishing)
         {
             poissonier.SetActive(false);
+            wanted.SetActive(false);
             pecher.SetActive(true);
             camRaycast.canFishing = true;
         }
