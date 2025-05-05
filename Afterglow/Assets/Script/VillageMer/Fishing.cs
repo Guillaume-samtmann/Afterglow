@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Fishing : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class Fishing : MonoBehaviour
     public GameObject zone2;
     public GameObject zone3;
     public GameObject persoCanePeche;
+    public GameObject zoneDialog1;
+    public GameObject zoneDialog2;
 
     public bool zone1Fishing = false;
     public bool zone2Fishing = false;
@@ -24,11 +27,19 @@ public class Fishing : MonoBehaviour
 
     public bool canAnnim = false;
 
-    int nbrPoisson = 0;
+    public int nbrPoisson = 0;
+
+    public Text nbrPoissonAff;
     // Update is called once per frame
     void Update()
     {
         ZoneFishing();
+
+        if(nbrPoisson >= 3)
+        {
+            zoneDialog2.SetActive(true);
+            zoneDialog1.SetActive(false);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -84,7 +95,7 @@ public class Fishing : MonoBehaviour
         {
             persoCanePeche.SetActive(true);
             nbrPoisson =  Random.Range(1, 4);
-            Debug.Log("nbr poisson zone1 " + nbrPoisson);
+            nbrPoissonAff.text = nbrPoisson.ToString();
             zone1IsComplect = true;
             if (zone1IsComplect)
             {
@@ -97,7 +108,7 @@ public class Fishing : MonoBehaviour
         {
             persoCanePeche.SetActive(true);
             nbrPoisson = nbrPoisson + Random.Range(2, 4);
-            Debug.Log("nbr poisson zone2 " + nbrPoisson);
+            nbrPoissonAff.text = nbrPoisson.ToString();
             zone2IsComplect = true;
             if (zone2IsComplect)
             {
@@ -110,7 +121,7 @@ public class Fishing : MonoBehaviour
         {
             persoCanePeche.SetActive(true);
             nbrPoisson = nbrPoisson + Random.Range(1, 3);
-            Debug.Log("nbr poisson zone3 " + nbrPoisson);
+            nbrPoissonAff.text = nbrPoisson.ToString();
             zone3IsComplect = true;
             if (zone3IsComplect)
             {
