@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using StarterAssets;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -7,6 +8,7 @@ namespace DialogueEditor
 {
     public class ConversationManager : MonoBehaviour
     {
+        public bool conversationEnd = false;
         private enum eState
         {
             TransitioningDialogueBoxOn,
@@ -158,6 +160,7 @@ namespace DialogueEditor
 
         public void EndConversation()
         {
+            conversationEnd = true;
             SetState(eState.TransitioningDialogueOff);
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;

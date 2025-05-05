@@ -16,7 +16,7 @@ public class DriveBoat : MonoBehaviour
     public Transform playerCamera; // 🎯 Ajouter la caméra du joueur
     private CharacterController playerController;
     private Rigidbody playerRigidbody;
-    public GameObject btnE;
+    public GameObject btnE_boat;
     public GameObject cmdDrive;
 
     private void Start()
@@ -26,20 +26,21 @@ public class DriveBoat : MonoBehaviour
         playerRigidbody = player.GetComponent<Rigidbody>();
     }
 
-    private void OnTriggerEnter(Collider other)
+    /*private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("DriveBoat"))
+        if (other.CompareTag("DriveBoat") && camRaycast.canFishing)
         {
             canDriveBoat = true;
             btnE.SetActive(true);
         }
-    }
+    }*/
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("DriveBoat"))
+        if (other.CompareTag("DriveBoat") && camRaycast.canFishing)
         {
-            btnE.SetActive(true);
+            canDriveBoat = true;
+            btnE_boat.SetActive(true);
         }
     }
 
@@ -98,6 +99,7 @@ public class DriveBoat : MonoBehaviour
             playerController.enabled = false;
         }
         cmdDrive.SetActive(true);
+        btnE_boat.SetActive(false);
 
     }
 
@@ -121,6 +123,7 @@ public class DriveBoat : MonoBehaviour
             playerController.enabled = true;
         }
         cmdDrive.SetActive(false);
+        btnE_boat.SetActive(true);
     }
 
     private void MoveBoat()
