@@ -156,6 +156,7 @@ namespace DialogueEditor
             SetState(eState.TransitioningDialogueBoxOn);
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.Confined;
+            conversationEnd = false;
         }
 
         public void EndConversation()
