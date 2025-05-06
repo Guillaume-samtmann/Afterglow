@@ -15,6 +15,7 @@ TagManager:
   - AttackPlayer
   - indice
   - Wanted
+  - TriggeurDialogue
   layers:
   - Default
   - TransparentFX

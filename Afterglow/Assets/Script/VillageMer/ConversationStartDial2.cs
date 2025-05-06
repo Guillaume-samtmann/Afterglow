@@ -4,15 +4,16 @@ using UnityEngine;
 using DialogueEditor;
 using StarterAssets;
 
-public class ConversationStart : MonoBehaviour
+public class ConversationStartDial2 : MonoBehaviour
 {
-    public GameObject triggeurDialog1;
-    public bool conversation1End = false;
+    public GameObject triggeurDialog2;
+    public bool conversation2End = false;
     [SerializeField] private NPCConversation myConversation;
     [SerializeField] private FirstPersonController firstPersonController;
     public GameObject btnE_poissonier;
     bool conversationStart = false;
     public GameObject canneApeche;
+    //private bool conversationHandled = false;
 
     Fishing fishing;
 
@@ -38,19 +39,28 @@ public class ConversationStart : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && conversationStart && !conversation1End)
+        if (Input.GetKeyDown(KeyCode.E) && conversationStart && !conversation2End)
         {
             ConversationManager.Instance.StartConversation(myConversation);
             firstPersonController.enabled = false;
             btnE_poissonier.SetActive(false);
             conversationStart = false;
-            conversation1End = true;
+            conversation2End = true;
         }
-        if (ConversationManager.Instance.conversationEnd && conversation1End)
+        if (ConversationManager.Instance.conversationEnd && conversation2End)
         {
             firstPersonController.enabled = true;
-            triggeurDialog1.SetActive(false);
+            triggeurDialog2.SetActive(false);
+            btnE_poissonier.SetActive(false);
+            //conversationHandled = true;
+            StartCoroutine(enableScript());
         }
     }
 
+
+    IEnumerator enableScript()
+    {
+        yield return new WaitForSeconds(1);
+        this.enabled = false;
+    }
 }

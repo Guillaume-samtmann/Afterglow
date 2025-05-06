@@ -49,6 +49,7 @@ public class DriveBoat : MonoBehaviour
         if (other.CompareTag("DriveBoat"))
         {
             canDriveBoat = false;
+            btnE_boat.SetActive(false);
         }
     }
 

@@ -112,6 +112,7 @@ public class Fishing : MonoBehaviour
             nbrPoisson = nbrPoisson + Random.Range(2, 4);
             nbrPoissonAff.text = nbrPoisson.ToString();
             zone2IsComplect = true;
+            btnPecher.SetActive(false);
             if (zone2IsComplect)
             {
                 zone2.SetActive(false);
@@ -125,6 +126,7 @@ public class Fishing : MonoBehaviour
             nbrPoisson = nbrPoisson + Random.Range(1, 3);
             nbrPoissonAff.text = nbrPoisson.ToString();
             zone3IsComplect = true;
+            btnPecher.SetActive(false);
             if (zone3IsComplect)
             {
                 zone3.SetActive(false);
