@@ -11,6 +11,8 @@ public class CamRaycast : MonoBehaviour
     public GameObject btnE_wanted;
     public GameObject btnE_cane;
     public GameObject btnE;
+    public GameObject btnE_pioche;
+    public GameObject btnClicGauche;
 
     //condition
     public bool takeCane = false;
@@ -21,8 +23,6 @@ public class CamRaycast : MonoBehaviour
     //ref obj
     public GameObject caneAPeche;
     public GameObject triggeurDialog1;
-
-    public PickUpAxe scriptAxe;
 
     public int ptnAtt = 5;
 
@@ -61,11 +61,19 @@ public class CamRaycast : MonoBehaviour
     public GameObject perle1;
     public bool canPickupupPerle = false;
     public bool isPickupPerle = false;
+    public GameObject btnPerle;
 
     [Header("Wanted")]
     public GameObject wanted0;
     public bool canPickupWanted0 = false;
     public bool isPickupWanted0 = false;
+
+    [Header("pioche")]
+    public bool canPickuupPioche = false;
+    public bool piocheIsPickup = false;
+    public GameObject pioche;
+    public GameObject piocheUser;
+    public Animator animatorPioche;
 
 
     private void HighlightObject(GameObject obj, bool highlight)
@@ -100,36 +108,49 @@ public class CamRaycast : MonoBehaviour
                 {
                     HighlightObject(hittedObject, true);
                     canBrokeRock01 = true;
+                    btnClicGauche.SetActive(true);
                 }
-                else if (hittedObject.name == "Rock02" && scriptAxe.AxeIsTake)
+                else if (hittedObject.name == "Rock02" && piocheIsPickup)
                 {
                     HighlightObject(hittedObject, true);
                     canBrokeRock02 = true;
+                    btnClicGauche.SetActive(true);
+                    piocheUser.SetActive(true);
                 }
-                else if (hittedObject.name == "Rock03" && scriptAxe.AxeIsTake)
+                else if (hittedObject.name == "Rock03" && piocheIsPickup)
                 {
                     HighlightObject (hittedObject, true);
                     canBrokeRock03 = true;
+                    btnClicGauche.SetActive(true);
+                    piocheUser.SetActive(true);
                 }
-                else if (hittedObject.name == "Rock04" && scriptAxe.AxeIsTake)
+                else if (hittedObject.name == "Rock04" && piocheIsPickup)
                 {
                     HighlightObject(hittedObject, true);
                     canBrokeRock04 = true;
+                    btnClicGauche.SetActive(true);
+                    piocheUser.SetActive(true);
                 }
-                else if (hittedObject.name == "Rock05" && scriptAxe.AxeIsTake)
+                else if (hittedObject.name == "Rock05" && piocheIsPickup)
                 {
                     HighlightObject(hittedObject, true);
                     canBrokeRock05 = true;
+                    btnClicGauche.SetActive(true);
+                    piocheUser.SetActive(true);
                 }
-                else if (hittedObject.name == "Rock06" && scriptAxe.AxeIsTake)
+                else if (hittedObject.name == "Rock06" && piocheIsPickup)
                 {
                     HighlightObject(hittedObject, true);
                     canBrokeRock06 = true;
+                    btnClicGauche.SetActive(true);
+                    piocheUser.SetActive(true);
                 }
-                else if (hittedObject.name == "Rock07" && scriptAxe.AxeIsTake)
+                else if (hittedObject.name == "Rock07" && piocheIsPickup)
                 {
                     HighlightObject(hittedObject, true);
                     canBrokeRock07 = true;
+                    btnClicGauche.SetActive(true);
+                    piocheUser.SetActive(true);
                 }
             }
             if (hittedObject.CompareTag("indice"))
@@ -143,7 +164,7 @@ public class CamRaycast : MonoBehaviour
                 else if(hittedObject.name == "Perle")
                 {
                     HighlightObject(hittedObject, true);
-                    btnE.SetActive(true);
+                    btnPerle.SetActive(true);
                     canPickupupPerle = true;
                 }
             }
@@ -156,6 +177,12 @@ public class CamRaycast : MonoBehaviour
                     canPickupWanted0 = true;
                 }
             }
+            if (hittedObject.CompareTag("Pioche"))
+            {
+                HighlightObject(hittedObject, true);
+                btnE_pioche.SetActive(true);
+                canPickuupPioche = true;
+            }
         }
         else
         {
@@ -164,6 +191,9 @@ public class CamRaycast : MonoBehaviour
             btnE.SetActive(false);
             btnE_cane.SetActive(false);
             btnE_wanted.SetActive(false);
+            btnE_pioche.SetActive(false);
+            btnPerle.SetActive(false);
+            btnClicGauche.SetActive(false);
             canBrokeRock01 = false;
             canBrokeRock02 = false;
             canBrokeRock03 = false;
@@ -174,6 +204,7 @@ public class CamRaycast : MonoBehaviour
             canPickupIndice1 = false;
             canPickupupPerle = false;
             canPickupWanted0 = false;
+            piocheUser.SetActive(false);
         }
 
         if(previousHittedObject != hittedObject)
@@ -199,6 +230,7 @@ public class CamRaycast : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && canBrokeRock01)
         {
             rockPv01 = rockPv01 - ptnAtt;
+            animatorPioche.SetBool("IsUse", true);
             if (rockPv01 <= 0)
             {
                 rock01.SetActive(false);
@@ -207,6 +239,7 @@ public class CamRaycast : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && canBrokeRock02)
         {
             rockPv02 = rockPv02 - ptnAtt;
+            animatorPioche.SetBool("IsUse", true);
             if (rockPv02 <= 0)
             {
                 rock02.SetActive(false);
@@ -215,6 +248,7 @@ public class CamRaycast : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && canBrokeRock03)
         {
             rockPv03 = rockPv03 - ptnAtt;
+            animatorPioche.SetBool("IsUse?", true);
             if (rockPv03 <= 0)
             {
                 rock03.SetActive(false);
@@ -223,6 +257,7 @@ public class CamRaycast : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && canBrokeRock04)
         {
             rockPv04 = rockPv04 - ptnAtt;
+            animatorPioche.SetBool("IsUse", true);
             if (rockPv04 <= 0)
             {
                 rock04.SetActive(false);
@@ -231,6 +266,7 @@ public class CamRaycast : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && canBrokeRock05)
         {
             rockPv05 = rockPv05 - ptnAtt;
+            animatorPioche.SetBool("IsUse", true);
             if (rockPv05 <= 0)
             {
                 rock05.SetActive(false);
@@ -239,6 +275,7 @@ public class CamRaycast : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && canBrokeRock06)
         {
             rockPv06 = rockPv06 - ptnAtt;
+            animatorPioche.SetBool("IsUse", true);
             if (rockPv06 <= 0)
             {
                 rock06.SetActive(false);
@@ -247,6 +284,7 @@ public class CamRaycast : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && canBrokeRock07)
         {
             rockPv07 = rockPv07 - ptnAtt;
+            animatorPioche.SetBool("IsUse", true);
             if (rockPv07 <= 0)
             {
                 rock07.SetActive(false);
@@ -262,13 +300,19 @@ public class CamRaycast : MonoBehaviour
         {
             perle1.SetActive(false);
             isPickupPerle = true;
-            btnE.SetActive(false);
+            btnPerle.SetActive(false);
         }
         if(Input.GetKeyUp(KeyCode.E) && canPickupWanted0)
         {
             wanted0.SetActive(false);
             isPickupWanted0 = true;
             btnE_wanted.SetActive(false);
+        }
+        if(Input.GetKeyUp(KeyCode.E) && canPickuupPioche)
+        {
+            pioche.SetActive(false);
+            piocheIsPickup = true;
+            btnE_pioche.SetActive(false);
         }
     }
 }

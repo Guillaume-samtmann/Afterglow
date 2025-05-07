@@ -16,6 +16,7 @@ TagManager:
   - indice
   - Wanted
   - TriggeurDialogue
+  - Pioche
   layers:
   - Default
   - TransparentFX
