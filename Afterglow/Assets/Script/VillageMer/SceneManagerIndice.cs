@@ -90,7 +90,7 @@ public class SceneManagerIndice : MonoBehaviour
             pecher.SetActive(false);
             ramener.SetActive(true);
         }
-        if (pickUpAxe.AxeIsTake)
+        if (camRaycast.piocheIsPickup)
         {
             ramener.SetActive(false);
             casser.SetActive(true);
@@ -107,6 +107,7 @@ public class SceneManagerIndice : MonoBehaviour
         {
             tuer.SetActive(false);
             indice.SetActive(true);
+            ramener.SetActive(false);
             pecher.SetActive(false);
         }
         if (camRaycast.isPickUpIndice1)
