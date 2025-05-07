@@ -6,6 +6,7 @@ public class DriveBoat : MonoBehaviour
 {
     //ref
     public CamRaycast camRaycast;
+    public Fishing fishing;
     //variable
     public float speed = 5f;
     private bool canDriveBoat = false;
@@ -50,6 +51,9 @@ public class DriveBoat : MonoBehaviour
         {
             canDriveBoat = false;
             btnE_boat.SetActive(false);
+            fishing.zone1.SetActive(false);
+            fishing.zone2.SetActive(false);
+            fishing.zone3.SetActive(false);
         }
     }
 

@@ -30,6 +30,7 @@ public class Fishing : MonoBehaviour
     public GameObject btnPecher;
 
     public Text nbrPoissonAff;
+    public GameObject arc;
     // Update is called once per frame
     void Update()
     {
@@ -99,6 +100,7 @@ public class Fishing : MonoBehaviour
             nbrPoisson =  Random.Range(1, 4);
             nbrPoissonAff.text = nbrPoisson.ToString();
             zone1IsComplect = true;
+            arc.SetActive(false);
             if (zone1IsComplect)
             {
                 zone1.SetActive(false);
@@ -113,6 +115,7 @@ public class Fishing : MonoBehaviour
             nbrPoissonAff.text = nbrPoisson.ToString();
             zone2IsComplect = true;
             btnPecher.SetActive(false);
+            arc.SetActive(false);
             if (zone2IsComplect)
             {
                 zone2.SetActive(false);
@@ -127,6 +130,7 @@ public class Fishing : MonoBehaviour
             nbrPoissonAff.text = nbrPoisson.ToString();
             zone3IsComplect = true;
             btnPecher.SetActive(false);
+            arc.SetActive(false);
             if (zone3IsComplect)
             {
                 zone3.SetActive(false);

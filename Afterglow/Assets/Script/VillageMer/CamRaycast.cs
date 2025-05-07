@@ -17,6 +17,7 @@ public class CamRaycast : MonoBehaviour
     //condition
     public bool takeCane = false;
     public bool canFishing = false;
+    public bool canneApecheIsPickup = false;
 
     public bool takeAxe = false;
 
@@ -75,6 +76,10 @@ public class CamRaycast : MonoBehaviour
     public GameObject piocheUser;
     public Animator animatorPioche;
 
+    [Header("uiItem")]
+    public GameObject cannePecheUi;
+    public GameObject piocheUi;
+
 
     private void HighlightObject(GameObject obj, bool highlight)
     {
@@ -104,53 +109,59 @@ public class CamRaycast : MonoBehaviour
             if (hittedObject.CompareTag("Rock"))
             {
                 
-                if(hittedObject.name == "Rock01")
+                if(hittedObject.name == "Rock01" && piocheIsPickup)
                 {
-                    HighlightObject(hittedObject, true);
-                    canBrokeRock01 = true;
-                    btnClicGauche.SetActive(true);
+                    if (piocheUser.activeInHierarchy)
+                    {
+                        HighlightObject(hittedObject, true);
+                        canBrokeRock01 = true;
+                        btnClicGauche.SetActive(true);
+                    }else
+                    {
+                        Debug.Log("Il faut une pioche");
+                    }
                 }
                 else if (hittedObject.name == "Rock02" && piocheIsPickup)
                 {
                     HighlightObject(hittedObject, true);
                     canBrokeRock02 = true;
                     btnClicGauche.SetActive(true);
-                    piocheUser.SetActive(true);
                 }
                 else if (hittedObject.name == "Rock03" && piocheIsPickup)
                 {
                     HighlightObject (hittedObject, true);
                     canBrokeRock03 = true;
                     btnClicGauche.SetActive(true);
-                    piocheUser.SetActive(true);
                 }
                 else if (hittedObject.name == "Rock04" && piocheIsPickup)
                 {
-                    HighlightObject(hittedObject, true);
-                    canBrokeRock04 = true;
-                    btnClicGauche.SetActive(true);
-                    piocheUser.SetActive(true);
+                    if (piocheUser.activeInHierarchy)
+                    {
+                        HighlightObject(hittedObject, true);
+                        canBrokeRock04 = true;
+                        btnClicGauche.SetActive(true);
+                    }else
+                    {
+                        Debug.Log("Il faut une pioche");
+                    }
                 }
                 else if (hittedObject.name == "Rock05" && piocheIsPickup)
                 {
                     HighlightObject(hittedObject, true);
                     canBrokeRock05 = true;
                     btnClicGauche.SetActive(true);
-                    piocheUser.SetActive(true);
                 }
                 else if (hittedObject.name == "Rock06" && piocheIsPickup)
                 {
                     HighlightObject(hittedObject, true);
                     canBrokeRock06 = true;
                     btnClicGauche.SetActive(true);
-                    piocheUser.SetActive(true);
                 }
                 else if (hittedObject.name == "Rock07" && piocheIsPickup)
                 {
                     HighlightObject(hittedObject, true);
                     canBrokeRock07 = true;
                     btnClicGauche.SetActive(true);
-                    piocheUser.SetActive(true);
                 }
             }
             if (hittedObject.CompareTag("indice"))
@@ -204,7 +215,6 @@ public class CamRaycast : MonoBehaviour
             canPickupIndice1 = false;
             canPickupupPerle = false;
             canPickupWanted0 = false;
-            piocheUser.SetActive(false);
         }
 
         if(previousHittedObject != hittedObject)
@@ -226,6 +236,8 @@ public class CamRaycast : MonoBehaviour
             canFishing = true;
             btnE_cane.SetActive(false);
             triggeurDialog1.SetActive(false);
+            cannePecheUi.SetActive(true);
+            canneApecheIsPickup = true;
         }
         if (Input.GetMouseButtonDown(0) && canBrokeRock01)
         {
@@ -313,6 +325,7 @@ public class CamRaycast : MonoBehaviour
             pioche.SetActive(false);
             piocheIsPickup = true;
             btnE_pioche.SetActive(false);
+            piocheUi.SetActive(true);
         }
     }
 }
