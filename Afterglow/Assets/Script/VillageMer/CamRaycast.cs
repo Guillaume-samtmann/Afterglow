@@ -119,19 +119,36 @@ public class CamRaycast : MonoBehaviour
                     }else
                     {
                         Debug.Log("Il faut une pioche");
+                        HighlightObject(previousHittedObject, false);
                     }
                 }
                 else if (hittedObject.name == "Rock02" && piocheIsPickup)
                 {
-                    HighlightObject(hittedObject, true);
-                    canBrokeRock02 = true;
-                    btnClicGauche.SetActive(true);
+                    if (piocheUser.activeInHierarchy)
+                    {
+                        HighlightObject(hittedObject, true);
+                        canBrokeRock02 = true;
+                        btnClicGauche.SetActive(true);
+                    }
+                    else
+                    {
+                        Debug.Log("Il faut une pioche");
+                        HighlightObject(previousHittedObject, false);
+                    }
                 }
                 else if (hittedObject.name == "Rock03" && piocheIsPickup)
                 {
-                    HighlightObject (hittedObject, true);
-                    canBrokeRock03 = true;
-                    btnClicGauche.SetActive(true);
+                    if (piocheUser.activeInHierarchy)
+                    {
+                        HighlightObject(hittedObject, true);
+                        canBrokeRock03 = true;
+                        btnClicGauche.SetActive(true);
+                    }
+                    else
+                    {
+                        Debug.Log("Il faut une pioche");
+                        HighlightObject(previousHittedObject, false);
+                    }
                 }
                 else if (hittedObject.name == "Rock04" && piocheIsPickup)
                 {
@@ -143,25 +160,50 @@ public class CamRaycast : MonoBehaviour
                     }else
                     {
                         Debug.Log("Il faut une pioche");
+                        HighlightObject(previousHittedObject, false);
                     }
                 }
                 else if (hittedObject.name == "Rock05" && piocheIsPickup)
                 {
-                    HighlightObject(hittedObject, true);
-                    canBrokeRock05 = true;
-                    btnClicGauche.SetActive(true);
+                    if (piocheUser.activeInHierarchy)
+                    {
+                        HighlightObject(hittedObject, true);
+                        canBrokeRock05 = true;
+                        btnClicGauche.SetActive(true);
+                    }
+                    else
+                    {
+                        Debug.Log("Il faut une pioche");
+                        HighlightObject(previousHittedObject, false);
+                    }
                 }
                 else if (hittedObject.name == "Rock06" && piocheIsPickup)
                 {
-                    HighlightObject(hittedObject, true);
-                    canBrokeRock06 = true;
-                    btnClicGauche.SetActive(true);
+                    if (piocheUser.activeInHierarchy)
+                    {
+                        HighlightObject(hittedObject, true);
+                        canBrokeRock06 = true;
+                        btnClicGauche.SetActive(true);
+                    }
+                    else
+                    {
+                        Debug.Log("Il faut une pioche");
+                        HighlightObject(previousHittedObject, false);
+                    }
                 }
                 else if (hittedObject.name == "Rock07" && piocheIsPickup)
                 {
-                    HighlightObject(hittedObject, true);
-                    canBrokeRock07 = true;
-                    btnClicGauche.SetActive(true);
+                    if (piocheUser.activeInHierarchy)
+                    {
+                        HighlightObject(hittedObject, true);
+                        canBrokeRock07 = true;
+                        btnClicGauche.SetActive(true);
+                    }
+                    else
+                    {
+                        Debug.Log("Il faut une pioche");
+                        HighlightObject(previousHittedObject, false);
+                    }
                 }
             }
             if (hittedObject.CompareTag("indice"))
@@ -241,65 +283,90 @@ public class CamRaycast : MonoBehaviour
         }
         if (Input.GetMouseButtonDown(0) && canBrokeRock01)
         {
-            rockPv01 = rockPv01 - ptnAtt;
-            animatorPioche.SetBool("IsUse", true);
-            if (rockPv01 <= 0)
+            if (piocheUser.activeInHierarchy)
             {
-                rock01.SetActive(false);
+                rockPv01 = rockPv01 - ptnAtt;
+                animatorPioche.SetBool("IsUse", true);
+                if (rockPv01 <= 0)
+                {
+                    rock01.SetActive(false);
+                }
+            }
+            else
+            {
+                HighlightObject(previousHittedObject, false);
             }
         }
         if (Input.GetMouseButtonDown(0) && canBrokeRock02)
         {
-            rockPv02 = rockPv02 - ptnAtt;
-            animatorPioche.SetBool("IsUse", true);
-            if (rockPv02 <= 0)
+            if (piocheUser.activeInHierarchy)
             {
-                rock02.SetActive(false);
+                rockPv02 = rockPv02 - ptnAtt;
+                animatorPioche.SetBool("IsUse", true);
+                if (rockPv02 <= 0)
+                {
+                    rock02.SetActive(false);
+                }
             }
         }
         if (Input.GetMouseButtonDown(0) && canBrokeRock03)
         {
-            rockPv03 = rockPv03 - ptnAtt;
-            animatorPioche.SetBool("IsUse?", true);
-            if (rockPv03 <= 0)
+            if (piocheUser.activeInHierarchy)
             {
-                rock03.SetActive(false);
+                rockPv03 = rockPv03 - ptnAtt;
+                animatorPioche.SetBool("IsUse?", true);
+                if (rockPv03 <= 0)
+                {
+                    rock03.SetActive(false);
+                }
             }
         }
         if (Input.GetMouseButtonDown(0) && canBrokeRock04)
         {
-            rockPv04 = rockPv04 - ptnAtt;
-            animatorPioche.SetBool("IsUse", true);
-            if (rockPv04 <= 0)
+            if (piocheUser.activeInHierarchy)
             {
-                rock04.SetActive(false);
+                rockPv04 = rockPv04 - ptnAtt;
+                animatorPioche.SetBool("IsUse", true);
+                if (rockPv04 <= 0)
+                {
+                    rock04.SetActive(false);
+                }
             }
         }
         if (Input.GetMouseButtonDown(0) && canBrokeRock05)
         {
-            rockPv05 = rockPv05 - ptnAtt;
-            animatorPioche.SetBool("IsUse", true);
-            if (rockPv05 <= 0)
+            if (piocheUser.activeInHierarchy)
             {
-                rock05.SetActive(false);
+                rockPv05 = rockPv05 - ptnAtt;
+                animatorPioche.SetBool("IsUse", true);
+                if (rockPv05 <= 0)
+                {
+                    rock05.SetActive(false);
+                }
             }
         }
         if (Input.GetMouseButtonDown(0) && canBrokeRock06)
         {
-            rockPv06 = rockPv06 - ptnAtt;
-            animatorPioche.SetBool("IsUse", true);
-            if (rockPv06 <= 0)
+            if (piocheUser.activeInHierarchy)
             {
-                rock06.SetActive(false);
+                rockPv06 = rockPv06 - ptnAtt;
+                animatorPioche.SetBool("IsUse", true);
+                if (rockPv06 <= 0)
+                {
+                    rock06.SetActive(false);
+                }
             }
         }
         if (Input.GetMouseButtonDown(0) && canBrokeRock07)
         {
-            rockPv07 = rockPv07 - ptnAtt;
-            animatorPioche.SetBool("IsUse", true);
-            if (rockPv07 <= 0)
+            if (piocheUser.activeInHierarchy)
             {
-                rock07.SetActive(false);
+                rockPv07 = rockPv07 - ptnAtt;
+                animatorPioche.SetBool("IsUse", true);
+                if (rockPv07 <= 0)
+                {
+                    rock07.SetActive(false);
+                }
             }
         }
         if(Input.GetKeyUp(KeyCode.E) && canPickupIndice1)
