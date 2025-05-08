@@ -7,6 +7,7 @@ public class DriveBoat : MonoBehaviour
     //ref
     public CamRaycast camRaycast;
     public Fishing fishing;
+    public SceneManagerIndice sceneManagerIndice;
     //variable
     public float speed = 5f;
     private bool canDriveBoat = false;
@@ -19,6 +20,8 @@ public class DriveBoat : MonoBehaviour
     private Rigidbody playerRigidbody;
     public GameObject btnE_boat;
     public GameObject cmdDrive;
+
+    public bool aidePeche = false;
 
     private void Start()
     {
@@ -40,6 +43,7 @@ public class DriveBoat : MonoBehaviour
     {
         if (other.CompareTag("DriveBoat") && camRaycast.canFishing)
         {
+            aidePeche = true;
             canDriveBoat = true;
             btnE_boat.SetActive(true);
         }
