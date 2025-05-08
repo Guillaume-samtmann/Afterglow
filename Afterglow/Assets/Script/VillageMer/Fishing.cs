@@ -76,8 +76,8 @@ public class Fishing : MonoBehaviour
             zone2Fishing =false;
             zone3Fishing =false;
             canAnnim = false;
-            btnPecher.SetActive(false);
         }
+        btnPecher.SetActive(false);
     }
 
     void ZoneFishing()

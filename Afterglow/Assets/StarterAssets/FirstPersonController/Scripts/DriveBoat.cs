@@ -109,7 +109,7 @@ public class DriveBoat : MonoBehaviour
         }
         cmdDrive.SetActive(true);
         btnE_boat.SetActive(false);
-
+        fishing.btnPecher.SetActive(false);
     }
 
     private void StopDriving()
