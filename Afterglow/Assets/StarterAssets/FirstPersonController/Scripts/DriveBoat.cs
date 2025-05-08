@@ -6,6 +6,8 @@ public class DriveBoat : MonoBehaviour
 {
     //ref
     public CamRaycast camRaycast;
+    public Fishing fishing;
+    public SceneManagerIndice sceneManagerIndice;
     //variable
     public float speed = 5f;
     private bool canDriveBoat = false;
@@ -16,8 +18,10 @@ public class DriveBoat : MonoBehaviour
     public Transform playerCamera; // 🎯 Ajouter la caméra du joueur
     private CharacterController playerController;
     private Rigidbody playerRigidbody;
-    public GameObject btnE;
+    public GameObject btnE_boat;
     public GameObject cmdDrive;
+
+    public bool aidePeche = false;
 
     private void Start()
     {
@@ -26,20 +30,22 @@ public class DriveBoat : MonoBehaviour
         playerRigidbody = player.GetComponent<Rigidbody>();
     }
 
-    private void OnTriggerEnter(Collider other)
+    /*private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("DriveBoat"))
+        if (other.CompareTag("DriveBoat") && camRaycast.canFishing)
         {
             canDriveBoat = true;
             btnE.SetActive(true);
         }
-    }
+    }*/
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("DriveBoat"))
+        if (other.CompareTag("DriveBoat") && camRaycast.canFishing)
         {
-            btnE.SetActive(true);
+            aidePeche = true;
+            canDriveBoat = true;
+            btnE_boat.SetActive(true);
         }
     }
 
@@ -48,6 +54,10 @@ public class DriveBoat : MonoBehaviour
         if (other.CompareTag("DriveBoat"))
         {
             canDriveBoat = false;
+            btnE_boat.SetActive(false);
+            fishing.zone1.SetActive(false);
+            fishing.zone2.SetActive(false);
+            fishing.zone3.SetActive(false);
         }
     }
 
@@ -98,7 +108,8 @@ public class DriveBoat : MonoBehaviour
             playerController.enabled = false;
         }
         cmdDrive.SetActive(true);
-
+        btnE_boat.SetActive(false);
+        fishing.btnPecher.SetActive(false);
     }
 
     private void StopDriving()
@@ -121,6 +132,7 @@ public class DriveBoat : MonoBehaviour
             playerController.enabled = true;
         }
         cmdDrive.SetActive(false);
+        btnE_boat.SetActive(true);
     }
 
     private void MoveBoat()

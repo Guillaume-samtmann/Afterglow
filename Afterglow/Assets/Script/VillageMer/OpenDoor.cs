@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class OpenDoor : MonoBehaviour
 {
     public Animator _animator;
-    public GameObject btnE;
+    public GameObject btnE_openDoor;
+    public GameObject btnE_closeDoor;
     private bool isPlayerInTrigger = false;
 
     // Start is called before the first frame update
@@ -19,12 +20,20 @@ public class OpenDoor : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            isPlayerInTrigger = true;
-            btnE.SetActive(true);
+            if (!_animator.GetBool("canOpen"))
+            {
+                isPlayerInTrigger = true;
+                btnE_openDoor.SetActive(true);
+            }else
+            {
+                isPlayerInTrigger = true;
+                btnE_closeDoor.SetActive(true);
+            }
+               
         }
         else
         {
-            btnE.SetActive(false);
+            btnE_openDoor.SetActive(false);
         }
     }
 
@@ -33,7 +42,8 @@ public class OpenDoor : MonoBehaviour
         if(other.tag == "Player")
         {
             isPlayerInTrigger = false;
-            btnE.SetActive(false);
+            btnE_openDoor.SetActive(false);
+            btnE_closeDoor.SetActive(false);
         }
     }
 
@@ -45,11 +55,12 @@ public class OpenDoor : MonoBehaviour
             if (!_animator.GetBool("canOpen"))
             {
                 _animator.SetBool("canOpen", true);
-                btnE.SetActive(false);
+                btnE_openDoor.SetActive(false);
             }
             else
             {
                 _animator.SetBool("canOpen", false);
+                btnE_closeDoor.SetActive(false);
             }
         }
         
