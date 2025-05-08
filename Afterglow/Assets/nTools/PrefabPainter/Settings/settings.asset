@@ -712,8 +712,8 @@ MonoBehaviour:
       customPreviewImage: {fileID: 0}
     - name: Tree_free_04
       settings:
-        brushRadius: 20
-        brushSpacing: 0.5
+        brushRadius: 3.62
+        brushSpacing: 0.15
         brushOverlapCheckMode: 0
         brushOverlapDistance: 0.5
         brushOverlapCheckObjects: 1
@@ -1027,7 +1027,7 @@ MonoBehaviour:
       customPreviewImage: {fileID: 0}
     - name: Tree_free_02
       settings:
-        brushRadius: 8.16
+        brushRadius: 3.5
         brushSpacing: 0.5
         brushOverlapCheckMode: 0
         brushOverlapDistance: 0.5
