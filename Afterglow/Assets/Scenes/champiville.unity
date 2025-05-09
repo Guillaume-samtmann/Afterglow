@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.102794595, g: 0.31733906, b: 0.6242844, a: 1}
+  m_IndirectSpecularColor: {r: 0.102794625, g: 0.31733906, b: 0.6242843, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -9699,7 +9699,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "R\xE9cup\xE9rer l'affiche wanted"
+  m_Text: "R\xE9cup\xE9rer le sac"
 --- !u!222 &704780729
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -24816,6 +24816,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e191addfe8900da4e984740de8c8d83f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2109405223}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e191addfe8900da4e984740de8c8d83f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2109405225}
   m_SourcePrefab: {fileID: 100100000, guid: e191addfe8900da4e984740de8c8d83f, type: 3}
 --- !u!1 &2109405220 stripped
 GameObject:
@@ -24829,7 +24832,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2109405220}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
@@ -24862,6 +24865,27 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!65 &2109405225
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2109405220}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.57, y: 1, z: 1}
+  m_Center: {x: -4.45, y: 0.18, z: 0}
 --- !u!1001 &2109545235
 PrefabInstance:
   m_ObjectHideFlags: 0
