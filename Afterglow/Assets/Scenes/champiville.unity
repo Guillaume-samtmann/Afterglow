@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.102794595, g: 0.31733906, b: 0.6242844, a: 1}
+  m_IndirectSpecularColor: {r: 0.102794625, g: 0.31733906, b: 0.6242843, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6078,6 +6078,7 @@ GameObject:
 --- !u!64 &404542608
 MeshCollider:
   m_ObjectHideFlags: 0
+<<<<<<< HEAD
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -6097,6 +6098,109 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -6396304648370059911, guid: 6c1f14ddf621b9b40a5a5f69f90404b5, type: 3}
+=======
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1666804425080572170, guid: 0f301fdabe0c9a04ea403ff74b112f39, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 85.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1666804425080572170, guid: 0f301fdabe0c9a04ea403ff74b112f39, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 12.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1666804425080572170, guid: 0f301fdabe0c9a04ea403ff74b112f39, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 50.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 1666804425080572170, guid: 0f301fdabe0c9a04ea403ff74b112f39, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.24329947
+      objectReference: {fileID: 0}
+    - target: {fileID: 1666804425080572170, guid: 0f301fdabe0c9a04ea403ff74b112f39, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1666804425080572170, guid: 0f301fdabe0c9a04ea403ff74b112f39, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.9699512
+      objectReference: {fileID: 0}
+    - target: {fileID: 1666804425080572170, guid: 0f301fdabe0c9a04ea403ff74b112f39, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1666804425080572170, guid: 0f301fdabe0c9a04ea403ff74b112f39, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1666804425080572170, guid: 0f301fdabe0c9a04ea403ff74b112f39, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 151.837
+      objectReference: {fileID: 0}
+    - target: {fileID: 1666804425080572170, guid: 0f301fdabe0c9a04ea403ff74b112f39, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2579907945313855118, guid: 0f301fdabe0c9a04ea403ff74b112f39, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2579907945313855118, guid: 0f301fdabe0c9a04ea403ff74b112f39, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.375
+      objectReference: {fileID: 0}
+    - target: {fileID: 2579907945313855118, guid: 0f301fdabe0c9a04ea403ff74b112f39, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2579907945313855118, guid: 0f301fdabe0c9a04ea403ff74b112f39, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3684078277732715234, guid: 0f301fdabe0c9a04ea403ff74b112f39, type: 3}
+      propertyPath: m_Name
+      value: FirstPersonController
+      objectReference: {fileID: 0}
+    - target: {fileID: 3684078277732715234, guid: 0f301fdabe0c9a04ea403ff74b112f39, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 9000008683077070567, guid: 0f301fdabe0c9a04ea403ff74b112f39, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9000008683077070567, guid: 0f301fdabe0c9a04ea403ff74b112f39, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.375
+      objectReference: {fileID: 0}
+    - target: {fileID: 9000008683077070567, guid: 0f301fdabe0c9a04ea403ff74b112f39, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 5263287026841014119, guid: 0f301fdabe0c9a04ea403ff74b112f39, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 708601551}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2579907945313855115, guid: 0f301fdabe0c9a04ea403ff74b112f39, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1271487822}
+    - targetCorrespondingSourceObject: {fileID: 2579907945313855115, guid: 0f301fdabe0c9a04ea403ff74b112f39, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1271487823}
+    - targetCorrespondingSourceObject: {fileID: 4774135591542953437, guid: 0f301fdabe0c9a04ea403ff74b112f39, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1240356895}
+    - targetCorrespondingSourceObject: {fileID: 4774135591542953437, guid: 0f301fdabe0c9a04ea403ff74b112f39, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1240356894}
+  m_SourcePrefab: {fileID: 100100000, guid: 0f301fdabe0c9a04ea403ff74b112f39, type: 3}
+>>>>>>> guillaume
 --- !u!1001 &410723277
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16459,8 +16563,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b396b1865f34ac74cb555b298828def8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   messageObject: {fileID: 1414191350}
   messageText: {fileID: 1304935935}
+=======
+  camRaycast: {fileID: 1271487822}
+  driveBoat: {fileID: 1240356895}
+  zone1: {fileID: 0}
+  zone2: {fileID: 0}
+  zone3: {fileID: 0}
+  persoCanePeche: {fileID: 708601550}
+  zoneDialog1: {fileID: 0}
+  zoneDialog2: {fileID: 0}
+  zone1Fishing: 0
+  zone2Fishing: 0
+  zone3Fishing: 0
+  zone1IsComplect: 0
+  zone2IsComplect: 0
+  zone3IsComplect: 0
+  canAnnim: 0
+  nbrPoisson: 0
+  btnPecher: {fileID: 0}
+  nbrPoissonAff: {fileID: 0}
+  arc: {fileID: 0}
+--- !u!114 &1240356895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1240356892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e88895295ad771042a0e467258362a3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camRaycast: {fileID: 1271487822}
+  fishing: {fileID: 0}
+  sceneManagerIndice: {fileID: 0}
+  speed: 1
+  isDriving: 0
+  boat: {fileID: 0}
+  player: {fileID: 1240356892}
+  playerParent: {fileID: 1820676586}
+  playerCamera: {fileID: 2966722}
+  btnE_boat: {fileID: 0}
+  cmdDrive: {fileID: 0}
+  aidePeche: 0
+>>>>>>> guillaume
 --- !u!1001 &1240856368
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16845,6 +16995,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b30529a3c299dcb43b60b856dc798bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   messageText: {fileID: 0}
   btnE_bag: {fileID: 1911889892}
   btnE_food: {fileID: 359903072}
@@ -16860,12 +17011,69 @@ MonoBehaviour:
   isPickUpMoney: 0
   isPickUpFood: 0
 --- !u!114 &1271487824
+=======
+  btnE_wanted: {fileID: 0}
+  btnE_cane: {fileID: 0}
+  btnE: {fileID: 0}
+  btnE_pioche: {fileID: 0}
+  btnClicGauche: {fileID: 0}
+  takeCane: 0
+  canFishing: 0
+  canneApecheIsPickup: 0
+  takeAxe: 0
+  caneAPeche: {fileID: 0}
+  triggeurDialog1: {fileID: 0}
+  ptnAtt: 5
+  rock01: {fileID: 0}
+  rock02: {fileID: 0}
+  rock03: {fileID: 0}
+  rock04: {fileID: 0}
+  rock05: {fileID: 0}
+  rock06: {fileID: 0}
+  rock07: {fileID: 0}
+  canBrokeRock01: 0
+  canBrokeRock02: 0
+  canBrokeRock03: 0
+  canBrokeRock04: 0
+  canBrokeRock05: 0
+  canBrokeRock06: 0
+  canBrokeRock07: 0
+  rockPv01: 10
+  rockPv02: 15
+  rockPv03: 10
+  rockPv04: 15
+  rockPv05: 15
+  rockPv06: 10
+  rockPv07: 15
+  indice1: {fileID: 0}
+  canPickupIndice1: 0
+  isPickUpIndice1: 0
+  perle1: {fileID: 0}
+  canPickupupPerle: 0
+  isPickupPerle: 0
+  btnPerle: {fileID: 0}
+  wanted0: {fileID: 0}
+  canPickupWanted0: 0
+  isPickupWanted0: 0
+  canPickuupPioche: 0
+  piocheIsPickup: 0
+  pioche: {fileID: 0}
+  piocheUser: {fileID: 0}
+  animatorPioche: {fileID: 0}
+  cannePecheUi: {fileID: 0}
+  piocheUi: {fileID: 0}
+--- !u!114 &1271487823
+>>>>>>> guillaume
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 2579907945124981032}
+=======
+  m_GameObject: {fileID: 1271487821}
+>>>>>>> guillaume
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
@@ -16903,6 +17111,7 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+<<<<<<< HEAD
 --- !u!1001 &1272740342
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17280,6 +17489,8 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -2582600252679314848, guid: f90a1658df8c2bc4d8005ab66da2a10e, type: 3}
+=======
+>>>>>>> guillaume
 --- !u!1001 &1319643704
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -19,9 +19,13 @@ TagManager:
   - table
   - TriggeurDialogue
   - Pioche
+<<<<<<< HEAD
   - bag
   - food
   - warning
+=======
+  - BlocMapMsg
+>>>>>>> guillaume
   layers:
   - Default
   - TransparentFX
@@ -29,7 +33,7 @@ TagManager:
   - Enemy
   - Water
   - UI
-  - 
+  - Post-process
   - 
   - 
   - 

@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Playables;
 
 public class Arrow : MonoBehaviour
 {
@@ -13,10 +12,12 @@ public class Arrow : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        Destroy(gameObject, 1f);
 
+        // Meilleure durée de vie pour éviter la destruction prématurée
+        Destroy(gameObject, 10f);
+
+        // Ignore les collisions avec le joueur
         Collider arrowCollider = GetComponent<Collider>();
-
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (player != null)
         {
@@ -26,6 +27,10 @@ public class Arrow : MonoBehaviour
                 Physics.IgnoreCollision(arrowCollider, playerCollider);
             }
         }
+
+        // Assure des collisions précises
+        rb.collisionDetectionMode = CollisionDetectionMode.Continuous;
+        rb.interpolation = RigidbodyInterpolation.Interpolate;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -34,15 +39,14 @@ public class Arrow : MonoBehaviour
         {
             isStuck = true;
 
-            rb.velocity = Vector3.zero;
-            rb.angularVelocity = Vector3.zero;
+            //rb.velocity = Vector3.zero;
+            //rb.angularVelocity = Vector3.zero;
+            //rb.isKinematic = true;
 
-            rb.isKinematic = true;
-
-            toucher = collision.transform.name;
             GetComponent<Collider>().enabled = false;
 
-            Debug.Log(toucher);
+            toucher = collision.transform.name;
+            Debug.Log("Fleche touchée : " + toucher);
         }
     }
 }

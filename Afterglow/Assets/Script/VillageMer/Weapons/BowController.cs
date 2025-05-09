@@ -5,18 +5,17 @@ using UnityEngine;
 public class BowController : MonoBehaviour
 {
     private Animator bowAnimator;
-    //public InventorySysteme inventory;
     public string arrowItemName = "Arrow";
     private bool isDrawing = false;
 
     public string arrowPrefabPath = "Arrow";
-
     private GameObject arrowPrefab;
     public Transform spawnPosition;
 
-    public float shootingForce = 100;
+    public float shootingForce = 100f;
 
     public GameObject viseur;
+    public LayerMask aimLayerMask; // NEW
 
     void Start()
     {
@@ -27,8 +26,7 @@ public class BowController : MonoBehaviour
     private void LoadArrowPrefab()
     {
         arrowPrefab = Resources.Load<GameObject>(arrowPrefabPath);
-
-        if(arrowPrefab == null)
+        if (arrowPrefab == null)
         {
             Debug.LogError("Arrow prefab not found at path: " + arrowPrefabPath);
         }
@@ -36,23 +34,16 @@ public class BowController : MonoBehaviour
 
     void Update()
     {
-        if (true)
-        {
-            HandleBowDrawing();
-        } 
-        else
-        {
-            if (isDrawing) CancelDraw();
-        }
+        HandleBowDrawing();
     }
 
     private void HandleBowDrawing()
     {
-        if (Input.GetMouseButtonDown(1)) // Right mouse button pressed
+        if (Input.GetMouseButtonDown(1))
         {
             StartDraw();
         }
-        if (Input.GetMouseButtonUp(1) && isDrawing) //Right mouse button released
+        if (Input.GetMouseButtonUp(1) && isDrawing)
         {
             CancelDraw();
         }
@@ -88,23 +79,28 @@ public class BowController : MonoBehaviour
 
     private void ShootArrow()
     {
-        Vector3 shootingDirection = CalulateDirection().normalized;
+        Vector3 shootingDirection = CalculateDirection().normalized;
 
-        GameObject arrow = Instantiate(arrowPrefab, spawnPosition.position, Quaternion.identity);
+        // Décalage pour éviter de heurter immédiatement le joueur ou un obstacle proche
+        Vector3 offsetSpawn = spawnPosition.position + spawnPosition.forward * 0.5f;
+
+        GameObject arrow = Instantiate(arrowPrefab, offsetSpawn, Quaternion.LookRotation(shootingDirection));
         arrow.transform.SetParent(null);
 
-        arrow.transform.forward = shootingDirection;
-
-        arrow.GetComponent<Rigidbody>().AddForce(shootingDirection * shootingForce, ForceMode.Impulse);
+        Rigidbody arrowRb = arrow.GetComponent<Rigidbody>();
+        if (arrowRb != null)
+        {
+            arrowRb.velocity = shootingDirection * shootingForce;
+        }
     }
 
-    public Vector3 CalulateDirection()
+    public Vector3 CalculateDirection()
     {
         Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         RaycastHit hit;
 
         Vector3 targetPoint;
-        if(Physics.Raycast(ray, out hit))
+        if (Physics.Raycast(ray, out hit, 100f, aimLayerMask))
         {
             targetPoint = hit.point;
         }
