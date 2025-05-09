@@ -17,6 +17,8 @@ TagManager:
   - Wanted
   - money
   - table
+  - TriggeurDialogue
+  - Pioche
   layers:
   - Default
   - TransparentFX
