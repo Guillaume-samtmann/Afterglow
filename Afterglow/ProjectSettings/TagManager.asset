@@ -3,37 +3,15 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - CinemachineTarget
-  - DriveBoat
-  - peche
-  - ZoneFishing
-  - hache
-  - Rock
-  - Arrow
-  - DetectPlayer
-  - AttackPlayer
-  - indice
-  - Wanted
-  - money
-  - table
-  - TriggeurDialogue
-  - Pioche
-<<<<<<< HEAD
-  - bag
-  - food
-  - warning
-=======
-  - BlocMapMsg
->>>>>>> guillaume
+  tags: []
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Enemy
+  - 
   - Water
   - UI
-  - Post-process
+  - 
   - 
   - 
   - 
