@@ -21,6 +21,7 @@ TagManager:
   - Pioche
   - bag
   - food
+  - warning
   layers:
   - Default
   - TransparentFX

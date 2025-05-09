@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using TreeEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class camRayCastChampi : MonoBehaviour
 {
     private GameObject previousHittedObject;
     private GameObject hittedObject;
+    public Text messageText;
     [Header("Button_E")]
     public GameObject btnE_bag;
     public GameObject btnE_food;
@@ -110,5 +112,19 @@ public class camRayCastChampi : MonoBehaviour
             btnE.SetActive(false);
         }
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.name == "warning" && (!isPickUpBag || !isPickUpFood || !isPickUpMoney))
+        {
+            messageText.text = "Récupérer tous les items avant de vous rendre au village.";
+        }
+    }
 
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.name == "warning")
+        {
+            messageText.text = "";
+        }
+    }
 }
