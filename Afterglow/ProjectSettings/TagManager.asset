@@ -19,6 +19,8 @@ TagManager:
   - table
   - TriggeurDialogue
   - Pioche
+  - bag
+  - food
   layers:
   - Default
   - TransparentFX
