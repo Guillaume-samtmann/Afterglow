@@ -15,8 +15,13 @@ TagManager:
   - AttackPlayer
   - indice
   - Wanted
+  - money
+  - table
   - TriggeurDialogue
   - Pioche
+  - bag
+  - food
+  - warning
   layers:
   - Default
   - TransparentFX
