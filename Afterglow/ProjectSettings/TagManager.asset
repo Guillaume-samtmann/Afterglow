@@ -3,7 +3,28 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
+<<<<<<< HEAD
   tags: []
+=======
+  tags:
+  - CinemachineTarget
+  - DriveBoat
+  - peche
+  - ZoneFishing
+  - hache
+  - Rock
+  - Arrow
+  - DetectPlayer
+  - AttackPlayer
+  - indice
+  - Wanted
+  - money
+  - table
+  - TriggeurDialogue
+  - Pioche
+  - bag
+  - food
+>>>>>>> Fix-mergeBug
   layers:
   - Default
   - TransparentFX

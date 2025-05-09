@@ -6079,6 +6079,9 @@ GameObject:
 MeshCollider:
   m_ObjectHideFlags: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Fix-mergeBug
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -6098,6 +6101,7 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -6396304648370059911, guid: 6c1f14ddf621b9b40a5a5f69f90404b5, type: 3}
+<<<<<<< HEAD
 =======
   serializedVersion: 2
   m_Modification:
@@ -6201,6 +6205,8 @@ MeshCollider:
       addedObject: {fileID: 1240356894}
   m_SourcePrefab: {fileID: 100100000, guid: 0f301fdabe0c9a04ea403ff74b112f39, type: 3}
 >>>>>>> guillaume
+=======
+>>>>>>> Fix-mergeBug
 --- !u!1001 &410723277
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16564,6 +16570,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 <<<<<<< HEAD
+<<<<<<< HEAD
   messageObject: {fileID: 1414191350}
   messageText: {fileID: 1304935935}
 =======
@@ -16611,6 +16618,9 @@ MonoBehaviour:
   cmdDrive: {fileID: 0}
   aidePeche: 0
 >>>>>>> guillaume
+=======
+  messageObject: {fileID: 194521300}
+>>>>>>> Fix-mergeBug
 --- !u!1001 &1240856368
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16996,7 +17006,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 <<<<<<< HEAD
+<<<<<<< HEAD
   messageText: {fileID: 0}
+=======
+>>>>>>> Fix-mergeBug
   btnE_bag: {fileID: 1911889892}
   btnE_food: {fileID: 359903072}
   btnE: {fileID: 2095374028}
@@ -17011,6 +17024,7 @@ MonoBehaviour:
   isPickUpMoney: 0
   isPickUpFood: 0
 --- !u!114 &1271487824
+<<<<<<< HEAD
 =======
   btnE_wanted: {fileID: 0}
   btnE_cane: {fileID: 0}
@@ -17064,16 +17078,22 @@ MonoBehaviour:
   piocheUi: {fileID: 0}
 --- !u!114 &1271487823
 >>>>>>> guillaume
+=======
+>>>>>>> Fix-mergeBug
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_GameObject: {fileID: 2579907945124981032}
 =======
   m_GameObject: {fileID: 1271487821}
 >>>>>>> guillaume
+=======
+  m_GameObject: {fileID: 2579907945124981032}
+>>>>>>> Fix-mergeBug
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
@@ -17111,6 +17131,7 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+<<<<<<< HEAD
 <<<<<<< HEAD
 --- !u!1001 &1272740342
 PrefabInstance:
@@ -17186,6 +17207,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 437444, guid: 7ce3b47ac3a119d4fbd89afaa955017e, type: 3}
   m_PrefabInstance: {fileID: 1272740342}
   m_PrefabAsset: {fileID: 0}
+=======
+>>>>>>> Fix-mergeBug
 --- !u!1 &1287571325 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9192224124609025690, guid: 555dea38b26cb1d4780cf84a97993bd2, type: 3}
@@ -17489,8 +17512,11 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -2582600252679314848, guid: f90a1658df8c2bc4d8005ab66da2a10e, type: 3}
+<<<<<<< HEAD
 =======
 >>>>>>> guillaume
+=======
+>>>>>>> Fix-mergeBug
 --- !u!1001 &1319643704
 PrefabInstance:
   m_ObjectHideFlags: 0
