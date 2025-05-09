@@ -1,18 +1,28 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class tableOpening : MonoBehaviour
+public class TableTriggerDisplay : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject messageObject;
+    private bool hasShownMessage = false;
+
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (!hasShownMessage && other.gameObject.name == "table")
+        {
+            hasShownMessage = true;
+            if (messageObject != null)
+            {
+                messageObject.SetActive(true);
+                Invoke(nameof(HideMessage), 10f);
+            }
+        }
+    }
+    private void HideMessage()
+    {
+        if (messageObject != null)
+        {
+            messageObject.SetActive(false);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
