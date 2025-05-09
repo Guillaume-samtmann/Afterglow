@@ -17,6 +17,7 @@ TagManager:
   - Wanted
   - TriggeurDialogue
   - Pioche
+  - BlocMapMsg
   layers:
   - Default
   - TransparentFX
