@@ -26,10 +26,11 @@ public class Fishing : MonoBehaviour
     public bool zone3IsComplect = false;
 
     public bool canAnnim = false;
-
     public int nbrPoisson = 0;
+    public GameObject btnPecher;
 
     public Text nbrPoissonAff;
+    public GameObject arc;
     // Update is called once per frame
     void Update()
     {
@@ -48,21 +49,21 @@ public class Fishing : MonoBehaviour
         {
             if(other.name == "Zone1")
             {
-                Debug.Log("Tu es dans la zone de peche 1");
                 zone1Fishing = true;
                 canAnnim = true;
+                btnPecher.SetActive(true);
             }
             else if (other.name == "Zone2")
             {
-                Debug.Log("Tu es dans la zone de peche 2");
                 zone2Fishing = true;
                 canAnnim = true;
+                btnPecher.SetActive(true);
             }
             else if(other.name == "Zone3")
             {
-                Debug.Log("Tu es dans la zone de peche 3");
                 zone3Fishing = true;
                 canAnnim = true;
+                btnPecher.SetActive(true);
             }
         }
     }
@@ -76,6 +77,7 @@ public class Fishing : MonoBehaviour
             zone3Fishing =false;
             canAnnim = false;
         }
+        btnPecher.SetActive(false);
     }
 
     void ZoneFishing()
@@ -94,9 +96,11 @@ public class Fishing : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F) && zone1Fishing)
         {
             persoCanePeche.SetActive(true);
+            btnPecher.SetActive(false);
             nbrPoisson =  Random.Range(1, 4);
             nbrPoissonAff.text = nbrPoisson.ToString();
             zone1IsComplect = true;
+            arc.SetActive(false);
             if (zone1IsComplect)
             {
                 zone1.SetActive(false);
@@ -110,6 +114,8 @@ public class Fishing : MonoBehaviour
             nbrPoisson = nbrPoisson + Random.Range(2, 4);
             nbrPoissonAff.text = nbrPoisson.ToString();
             zone2IsComplect = true;
+            btnPecher.SetActive(false);
+            arc.SetActive(false);
             if (zone2IsComplect)
             {
                 zone2.SetActive(false);
@@ -123,6 +129,8 @@ public class Fishing : MonoBehaviour
             nbrPoisson = nbrPoisson + Random.Range(1, 3);
             nbrPoissonAff.text = nbrPoisson.ToString();
             zone3IsComplect = true;
+            btnPecher.SetActive(false);
+            arc.SetActive(false);
             if (zone3IsComplect)
             {
                 zone3.SetActive(false);

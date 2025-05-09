@@ -10,12 +10,15 @@ public class SceneManagerIndice : MonoBehaviour
     public Fishing fishing;
     public PickUpAxe pickUpAxe;
     public Mob mob;
+    public DriveBoat driveBoat;
 
     public GameObject dialog1;
     public GameObject perle;
     public GameObject perso1Dialog1;
     public GameObject afterRock;
     public bool destroyAllRock = false;
+    private bool canAfficehMsg = true;
+    private bool canAfficheMsg2 = true;
 
 
     [Header("consignes")]
@@ -81,17 +84,22 @@ public class SceneManagerIndice : MonoBehaviour
         if (camRaycast.canFishing)
         {
             poissonier.SetActive(false);
+            wanted.SetActive(false);
             pecher.SetActive(true);
             camRaycast.canFishing = true;
         }
-        if(fishing.nbrPoisson >= 3)
+        if (driveBoat.aidePeche)
+        {
+            pecher.SetActive(false);
+        }
+        if(fishing.nbrPoisson >= 3 && canAfficehMsg)
         {
             pecher.SetActive(false);
             ramener.SetActive(true);
+            canAfficehMsg = false;
         }
-        if (pickUpAxe.AxeIsTake)
+        if (camRaycast.piocheIsPickup)
         {
-            ramener.SetActive(false);
             casser.SetActive(true);
             camRaycast.canFishing = false;
             pecher.SetActive(false);
@@ -106,13 +114,18 @@ public class SceneManagerIndice : MonoBehaviour
         {
             tuer.SetActive(false);
             indice.SetActive(true);
+            ramener.SetActive(false);
             pecher.SetActive(false);
         }
         if (camRaycast.isPickUpIndice1)
         {
             indice.SetActive(false);
+        }
+        if (camRaycast.isPickUpIndice1 && canAfficheMsg2)
+        {
             charpentier.SetActive(true);
             pecher.SetActive(false);
+            canAfficheMsg2 = false;
         }
 
     }

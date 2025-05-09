@@ -10,10 +10,12 @@ public class MobMove : MonoBehaviour
     public static string nomObj;
     Animator anim;
     public bool fin = false;
+    public GameObject centreD;
+    public GameObject cache;
 
     private void Awake()
     {
-        nomObj = "Centre";
+        nomObj = centreD.name;
         agent = GetComponent<NavMeshAgent>();
         GameObject centre = GameObject.Find(nomObj);
         target = centre.transform;
@@ -31,13 +33,14 @@ public class MobMove : MonoBehaviour
     private void Update()
     {
         float dist = agent.remainingDistance;
-        if (agent.pathStatus==NavMeshPathStatus.PathComplete && agent.remainingDistance <= 0.5f) 
+        if (agent.pathStatus == NavMeshPathStatus.PathComplete && agent.remainingDistance <= 0.5f)
         {
             anim.SetBool("isWalking", false);
-            if( fin == false )
+            if (fin == false)
             {
                 fin = true;
-                setNewDestination("Cache");
+                setNewDestination(cache.name);
+                StartCoroutine(GoCentre());
             }
         }
     }
@@ -52,4 +55,11 @@ public class MobMove : MonoBehaviour
         agent.destination = target.position;
     }
 
+
+    IEnumerator GoCentre()
+    {
+        yield return new WaitForSeconds(6);
+        fin = false;
+        setNewDestination(centreD.name);
+    }
 }

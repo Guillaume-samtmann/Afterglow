@@ -16,6 +16,8 @@ public class BowController : MonoBehaviour
 
     public float shootingForce = 100;
 
+    public GameObject viseur;
+
     void Start()
     {
         bowAnimator = GetComponent<Animator>();
@@ -64,12 +66,14 @@ public class BowController : MonoBehaviour
     {
         isDrawing = true;
         bowAnimator.SetBool("IsDrawing", true);
+        viseur.SetActive(true);
     }
 
     private void CancelDraw()
     {
         isDrawing = false;
         bowAnimator.SetBool("IsDrawing", false);
+        viseur.SetActive(false);
     }
 
     private void ReleaseArrow()
@@ -78,7 +82,7 @@ public class BowController : MonoBehaviour
 
         isDrawing = false;
         bowAnimator.SetBool("IsDrawing", false);
-
+        viseur.SetActive(false);
         ShootArrow();
     }
 
