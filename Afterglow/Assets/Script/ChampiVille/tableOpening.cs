@@ -1,28 +1,43 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TableTriggerDisplay : MonoBehaviour
 {
     public GameObject messageObject;
+    public Text messageText;
+
+    private bool isInTrigger = false;
     private bool hasShownMessage = false;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!hasShownMessage && other.gameObject.name == "table")
+        if (other.gameObject.name == "table" && !hasShownMessage)
         {
-            hasShownMessage = true;
-            if (messageObject != null)
-            {
-                messageObject.SetActive(true);
-                Invoke(nameof(HideMessage), 10f);
-            }
+            isInTrigger = true;
+            messageText.text = "Appuyer sur E pour découvrir la première mission.";
         }
     }
-    private void HideMessage()
+
+    private void OnTriggerExit(Collider other)
     {
-        if (messageObject != null)
+        if (other.gameObject.name == "table")
+        {
+            isInTrigger = false;
+            messageText.text = "";
+        }
+    }
+
+    private void Update()
+    {
+        if (isInTrigger && !hasShownMessage && Input.GetKeyDown(KeyCode.E))
+        {
+            messageText.text = "";
+            messageObject.SetActive(true);
+            hasShownMessage = true;
+        }
+        else if (hasShownMessage && Input.GetKeyDown(KeyCode.E))
         {
             messageObject.SetActive(false);
         }
     }
-
 }
