@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class loadSceneVillage : MonoBehaviour
 {
+    public camRayCastChampi CamRayCastChampi;
+    public GameObject missingItem;
+
     public GameObject btnE;
     public bool canLoad = false;
 
@@ -13,8 +16,29 @@ public class loadSceneVillage : MonoBehaviour
     {
         if (other.CompareTag("loadSceneVillage"))
         {
-            btnE.SetActive(true);
-            canLoad = true;
+            if(CamRayCastChampi.isPickUpCarrot && CamRayCastChampi.isPickUpBottle && CamRayCastChampi.isPickUpMeat && CamRayCastChampi.isPickUpPotato && CamRayCastChampi.isPickUpLoaf && CamRayCastChampi.isPickUpArc)
+            {
+                btnE.SetActive(true);
+                canLoad = true;
+            }else
+            {
+                missingItem.SetActive(true);
+            }
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("loadSceneVillage"))
+        {
+            if (CamRayCastChampi.isPickUpCarrot && CamRayCastChampi.isPickUpBottle && CamRayCastChampi.isPickUpMeat && CamRayCastChampi.isPickUpPotato && CamRayCastChampi.isPickUpLoaf && CamRayCastChampi.isPickUpArc)
+            {
+                btnE.SetActive(true);
+            }
+            else
+            {
+                missingItem.SetActive(true);
+            }
         }
     }
 
@@ -22,6 +46,7 @@ public class loadSceneVillage : MonoBehaviour
     {
         btnE?.SetActive(false);
         canLoad=false;
+        missingItem.SetActive(false);
     }
 
     private void Update()
