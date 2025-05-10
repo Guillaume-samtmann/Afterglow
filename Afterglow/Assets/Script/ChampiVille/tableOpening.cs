@@ -10,18 +10,29 @@ public class TableTriggerDisplay : MonoBehaviour
         if (!hasShownMessage && other.gameObject.name == "table")
         {
             hasShownMessage = true;
-            if (messageObject != null)
-            {
-                messageObject.SetActive(true);
-                Invoke(nameof(HideMessage), 10f);
-            }
         }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        hasShownMessage = false;
     }
     private void HideMessage()
     {
         if (messageObject != null)
         {
             messageObject.SetActive(false);
+        }
+    }
+
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.F) && hasShownMessage){
+            if (messageObject != null)
+            {
+                messageObject.SetActive(true);
+                Invoke(nameof(HideMessage), 10f);
+            }
         }
     }
 
