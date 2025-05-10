@@ -21,6 +21,7 @@ TagManager:
   - Pioche
   - bag
   - food
+  - loadSceneVillage
   layers:
   - Default
   - TransparentFX
