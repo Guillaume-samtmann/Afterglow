@@ -22,6 +22,8 @@ TagManager:
   - bag
   - food
   - loadSceneVillage
+  - BlocMapMsg
+  - arc
   layers:
   - Default
   - TransparentFX
