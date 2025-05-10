@@ -154,8 +154,8 @@ namespace DialogueEditor
             TurnOnUI();
             m_currentSpeech = m_conversation.Root;
             SetState(eState.TransitioningDialogueBoxOn);
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.Confined;
+            //Cursor.visible = true;
+            //Cursor.lockState = CursorLockMode.None;
             conversationEnd = false;
         }
 
@@ -163,8 +163,8 @@ namespace DialogueEditor
         {
             conversationEnd = true;
             SetState(eState.TransitioningDialogueOff);
-            Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
+            //Cursor.visible = false;
+            //Cursor.lockState = CursorLockMode.Locked;
 
             if (OnConversationEnded != null)
                 OnConversationEnded.Invoke();
@@ -632,7 +632,7 @@ namespace DialogueEditor
             return null;
         }
 
-        private void TurnOnUI()
+        public void TurnOnUI()
         {
             DialoguePanel.gameObject.SetActive(true);
             OptionsPanel.gameObject.SetActive(true);
@@ -650,7 +650,7 @@ namespace DialogueEditor
             NpcIcon.sprite = BlankSprite;
         }
 
-        private void TurnOffUI()
+        public void TurnOffUI()
         {
             DialoguePanel.gameObject.SetActive(false);
             OptionsPanel.gameObject.SetActive(false);

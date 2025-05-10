@@ -18,6 +18,11 @@ public class PlayerManager : MonoBehaviour
     public GameObject cannePecheActive;
     public GameObject piocheActive;
 
+    private void Start()
+    {
+        //Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
+    }
     private void Update()
     {
         Debug.Log(playerLife);

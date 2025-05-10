@@ -45,12 +45,21 @@ public class ConversationStart : MonoBehaviour
             btnE_poissonier.SetActive(false);
             conversationStart = false;
             conversation1End = true;
+            ConversationManager.Instance.TurnOnUI();
+
+            //Cursor.lockState = CursorLockMode.None;
+            //Cursor.visible = true;
         }
+
         if (ConversationManager.Instance.conversationEnd && conversation1End)
         {
             firstPersonController.enabled = true;
             triggeurDialog1.SetActive(false);
+
+            //Cursor.lockState = CursorLockMode.Locked;
+            //Cursor.visible = false;
         }
+
     }
 
 }

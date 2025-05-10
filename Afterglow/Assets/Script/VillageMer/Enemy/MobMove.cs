@@ -10,25 +10,61 @@ public class MobMove : MonoBehaviour
     public static string nomObj;
     Animator anim;
     public bool fin = false;
-    public GameObject centreD;
+    //public GameObject centreD;
     public GameObject cache;
+
+    [SerializeField] private GameObject centreD; // Assigne ceci dans l'Inspector;
 
     private void Awake()
     {
-        nomObj = centreD.name;
         agent = GetComponent<NavMeshAgent>();
-        GameObject centre = GameObject.Find(nomObj);
-        target = centre.transform;
+
+        if (centreD != null)
+        {
+            target = centreD.transform;
+        }
+        else
+        {
+            Debug.LogError("centreD n'est pas assigné dans l'inspector pour " + gameObject.name);
+        }
     }
 
-    // Start is called before the first frame update
-    void Start()
+    private IEnumerator Start()
     {
         anim = GetComponent<Animator>();
-        anim.SetBool("isWalking", true);
-        NavMeshPath path = new NavMeshPath();
-        agent.destination = target.position;
+        if (anim != null)
+            anim.SetBool("isWalking", true);
+
+        yield return null; // Attend que la frame initiale se termine
+
+        if (target != null)
+            agent.destination = target.position;
+        else
+            Debug.LogError("La cible (target) est NULL pour " + gameObject.name);
     }
+
+    /*private void Start()
+    {
+        anim = GetComponent<Animator>();
+
+        if (anim != null)
+        {
+            anim.SetBool("isWalking", true);
+        }
+        else
+        {
+            Debug.LogWarning("Aucun Animator trouvé sur " + gameObject.name);
+        }
+
+        if (target != null)
+        {
+            agent.destination = target.position;
+        }
+        else
+        {
+            Debug.LogError("La cible (target) est NULL pour " + gameObject.name);
+        }
+    }*/
 
     private void Update()
     {
