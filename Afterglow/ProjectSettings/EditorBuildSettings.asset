@@ -9,6 +9,12 @@ EditorBuildSettings:
     path: Assets/DialogueEditor/Example/DialogueEditorExample.unity
     guid: 79b1d237a9dc75a4db93ee2821a81e2c
   - enabled: 1
+    path: Assets/Scenes/Demarrage.unity
+    guid: ca6c15cbde6c5db4bbbdd73add6a3ee1
+  - enabled: 1
+    path: Assets/Scenes/Histoire.unity
+    guid: 8cd8e13fbc3ea9a449d4005cce9c51f7
+  - enabled: 1
     path: Assets/Scenes/champiville.unity
     guid: 02ba61386d304394bb191830f30d1b9d
   - enabled: 1
