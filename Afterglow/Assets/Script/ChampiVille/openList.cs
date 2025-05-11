@@ -7,6 +7,12 @@ public class openList : MonoBehaviour
     public GameObject listObject;
     private bool isListVisible = false;
 
+    private void Start()
+    {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.R) && !isListVisible)

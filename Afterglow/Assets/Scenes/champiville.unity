@@ -10508,7 +10508,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "R\xE9cuperer l'argent"
+  m_Text: "R\xE9cup\xE9rer l'argent"
 --- !u!222 &711155884
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12267,7 +12267,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Prendre la nourriture
+  m_Text: "R\xE9cup\xE9rer la nourriture"
 --- !u!222 &889702611
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -22745,7 +22745,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Prendre l'arc
+  m_Text: "R\xE9cup\xE9rer  l'arc"
 --- !u!222 &1821442689
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -23729,7 +23729,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Tu n'as pas collecter tout les items
+  m_text: "Tu n'as pas collect\xE9 tous les items"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -26387,7 +26387,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.47843137}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

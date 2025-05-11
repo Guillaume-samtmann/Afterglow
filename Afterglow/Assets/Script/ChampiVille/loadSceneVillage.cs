@@ -53,7 +53,7 @@ public class loadSceneVillage : MonoBehaviour
     {
         if(Input.GetKeyUp(KeyCode.E) && canLoad) 
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(3);
         }
     }
 }

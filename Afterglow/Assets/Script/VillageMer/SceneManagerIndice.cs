@@ -64,7 +64,7 @@ public class SceneManagerIndice : MonoBehaviour
     {
         if (camRaycast.isPickupPerle)
         {
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(4);
         }
     }
 
