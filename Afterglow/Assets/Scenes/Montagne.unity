@@ -4490,6 +4490,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 795569543370315172, guid: 3bb4cf84dc3a696498a1cbefbb7311d1, type: 3}
+      propertyPath: m_Text
+      value: "R\xE9cup\xE9rer la perle"
+      objectReference: {fileID: 0}
+    - target: {fileID: 898032021176232831, guid: 3bb4cf84dc3a696498a1cbefbb7311d1, type: 3}
+      propertyPath: m_Text
+      value: Fermer la porte
+      objectReference: {fileID: 0}
+    - target: {fileID: 2360000008217102037, guid: 3bb4cf84dc3a696498a1cbefbb7311d1, type: 3}
+      propertyPath: m_Text
+      value: Tuez les enemies
+      objectReference: {fileID: 0}
     - target: {fileID: 2554637271908646232, guid: 3bb4cf84dc3a696498a1cbefbb7311d1, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -4570,6 +4582,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3353708917432171854, guid: 3bb4cf84dc3a696498a1cbefbb7311d1, type: 3}
+      propertyPath: m_Text
+      value: Ramenez les poissons
+      objectReference: {fileID: 0}
+    - target: {fileID: 3563127061947708178, guid: 3bb4cf84dc3a696498a1cbefbb7311d1, type: 3}
+      propertyPath: m_Text
+      value: Allez parler au charpentier
+      objectReference: {fileID: 0}
+    - target: {fileID: 4915765404550908986, guid: 3bb4cf84dc3a696498a1cbefbb7311d1, type: 3}
+      propertyPath: m_Text
+      value: Allez voir le poissonier pour plus d'informations
+      objectReference: {fileID: 0}
     - target: {fileID: 5216170058947905128, guid: 3bb4cf84dc3a696498a1cbefbb7311d1, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -4578,17 +4602,33 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5475456230881345215, guid: 3bb4cf84dc3a696498a1cbefbb7311d1, type: 3}
+      propertyPath: m_Text
+      value: Trouvez le bateau pour allez pecher
+      objectReference: {fileID: 0}
     - target: {fileID: 7366086057583133404, guid: 3bb4cf84dc3a696498a1cbefbb7311d1, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7517319661326345960, guid: 3bb4cf84dc3a696498a1cbefbb7311d1, type: 3}
+      propertyPath: m_Text
+      value: "R\xE9cup\xE9rer la cane \xE0 p\xEAche"
       objectReference: {fileID: 0}
     - target: {fileID: 7665088822172350859, guid: 3bb4cf84dc3a696498a1cbefbb7311d1, type: 3}
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 8569491872042158735, guid: 3bb4cf84dc3a696498a1cbefbb7311d1, type: 3}
+      propertyPath: m_Text
+      value: "R\xE9cup\xE9rer la pioche"
+      objectReference: {fileID: 0}
     - target: {fileID: 8813111590766276719, guid: 3bb4cf84dc3a696498a1cbefbb7311d1, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8854372507012151612, guid: 3bb4cf84dc3a696498a1cbefbb7311d1, type: 3}
+      propertyPath: m_Text
+      value: "D\xE9truisez les rocher"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6856,15 +6896,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentIDCounter: 12
-  json: "{\"Options\":[{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":8}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":374.600037,\"yPos\":149},\"ID\":7,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Vous
-    \xEAtes celui qui a tu\xE9 mon grand-p\xE8re ? J'ai trouv\xE9 ce pendentif, je
-    crois que c'est le v\xF4tre\",\"parentUIDs\":[0],\"SpeechUID\":-1},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":374.600037,\"yPos\":470},\"ID\":10,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Maintenant,
+  json: "{\"Options\":[{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":8}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":294.400024,\"yPos\":149},\"ID\":7,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Auriez-vous
+    tu\xE9 mon grand-p\xE8re ? J\u2019ai trouv\xE9 ce pendentif pr\xE8s de lui. Je
+    pense qu\u2019il est \xE0 vous.\",\"parentUIDs\":[0],\"SpeechUID\":-1},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":294.400024,\"yPos\":470},\"ID\":10,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Maintenant,
     vous allez me suivre, pour que les habitants de mon village puissent vous juger
-    !\",\"parentUIDs\":[11],\"SpeechUID\":-1}],\"Parameters\":[],\"SpeechNodes\":[{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":7}],\"EditorInfo\":{\"isRoot\":true,\"xPos\":377.2,\"yPos\":22},\"ID\":0,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Je
-    peux t'aide ?\",\"parentUIDs\":[],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"M\xE9chant\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":11}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":372.600037,\"yPos\":238},\"ID\":8,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Oh
-    ! Je ne savais pas qu'il avait une famille, d\xE9sol\xE9 \",\"parentUIDs\":[7],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"M\xE9chant\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":10}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":366.600037,\"yPos\":348},\"ID\":11,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Il
-    y a l'homme, cet homme a tu\xE9 ma famille et a disparu. J'ai pass\xE9 20 ans
-    \xE0 le retrouver, juste par d\xE9sir de vengeance\",\"parentUIDs\":[8],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"M\xE9chant\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0}]}"
+    !\",\"parentUIDs\":[11],\"SpeechUID\":-1}],\"Parameters\":[],\"SpeechNodes\":[{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":7}],\"EditorInfo\":{\"isRoot\":true,\"xPos\":297,\"yPos\":22},\"ID\":0,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Je
+    peux t'aider ?\",\"parentUIDs\":[],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"M\xE9chant\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":11}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":292.400024,\"yPos\":238},\"ID\":8,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Oh\u2026
+    Je ne savais pas qu\u2019il avait une famille. Je suis d\xE9sol\xE9.\",\"parentUIDs\":[7],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"M\xE9chant\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":10}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":286.400024,\"yPos\":348},\"ID\":11,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Il
+    y a longtemps, cet homme a tu\xE9 ma famille et a disparu. J'ai pass\xE9 20 ans
+    \xE0 le retrouver, juste par d\xE9sir de vengeance.\",\"parentUIDs\":[8],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"M\xE9chant\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0}]}"
   saveVersion: 110
   DefaultName: 
   DefaultSprite: {fileID: 0}

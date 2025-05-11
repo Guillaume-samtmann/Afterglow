@@ -657,9 +657,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Mon grand-p\xE8re a \xE9t\xE9 tu\xE9. Je ne sais pas pourquoi, ni par
-    qui. Mais j'ai trouv\xE9 un pendentif au sol. Je suis s\xFBr qu'il appartenait
-    au meurtrier, et je vais tout faire pour le retrouver."
+  m_text: "Mon grand-p\xE8re a \xE9t\xE9 tu\xE9. Je ne sais ni pourquoi, ni par qui.
+    Mais j\u2019ai trouv\xE9 un pendentif au sol. J\u2019en suis certaine : il appartenait
+    au meurtrier. Je ferai tout pour le retrouver."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1217,7 +1217,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Il y a quelques jours, je rentrais \xE0 la maison. C\u2019est l\xE0 que
-    je l\u2019ai trouv\xE9e, allong\xE9e sur le sol\u2026"
+    je l\u2019ai trouv\xE9, allong\xE9 sur le sol\u2026"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
